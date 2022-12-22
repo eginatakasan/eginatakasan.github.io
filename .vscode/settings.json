@@ -1,0 +1,6 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "diffEditor.wordWrap": "inherit",
+  "eslint.packageManager": "yarn",
+  "prettier.configPath": ".prettierrc"
+}

@@ -1,39 +1,39 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
 
-module.exports = {
-  entry: path.resolve(__dirname, 'src/index.tsx'),
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-      {
-        test: /\.svg$/,
-        use: ['@svgr/webpack'],
-      },
-      {
-        test: /\.css$/,
-        use: ['css-loader'],
-      },
-    ],
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    port: 3000,
-    historyApiFallback: true,
- },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-  },
-  plugins: [new HtmlWebpackPlugin({
-    template: path.resolve(__dirname, 'src/index.html'),
-  })],
-};
+module.exports = function webpackConfig(env, args) {
+  return {
+    entry: path.join(__dirname, 'src/index.tsx'),
+    output: {
+      filename: 'main.js',
+      path: path.join(__dirname, 'public'),
+    },
+    resolve: { extensions: ['.ts', '.tsx', '.js'] },
+    module: {
+      rules: [
+        {
+          test: /\.[jt]sx?$/,
+          exclude: /node_modules/,
+          loader: require.resolve('babel-loader'),
+          // See .babelrc for further babel config
+        },
+        {
+          test: /\.css?$/,
+          exclude: /node_modules/,
+          loader: require.resolve('css-loader'),
+          // See .babelrc for further babel config
+        },
+      ],
+    },
+    optimization: {
+      minimizer: [
+        // Omit creation of .txt files
+        new (require('terser-webpack-plugin'))({ extractComments: false }),
+      ],
+    },
+    devServer: {
+      hot: true,
+      open: true,
+      static: { directory: path.join(__dirname, 'public') },
+    },
+  }
+}
