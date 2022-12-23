@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 
 import { ThemeContext } from '../../context/ThemeContext'
 
-import SunFlowers from './../../assets/vectors/Sunflower.vector'
-import IntoTheNight from './../../assets/vectors/IntoTheNight.vector'
+import SunFlowers from '../../assets/vectors/Sunflower.vector'
+import IntoTheNight from '../../assets/vectors/IntoTheNight.vector'
 
-const AnimationsView = () => {
+const AnimationsPage = () => {
   const theme = useContext(ThemeContext)
 
   return (
@@ -35,4 +35,4 @@ const AnimationsView = () => {
   )
 }
 
-export default AnimationsView
+export default AnimationsPage
