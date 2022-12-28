@@ -1,4 +1,5 @@
 import React from 'react'
+import tw from 'twin.macro'
 
 type Props = React.HTMLAttributes<SVGSVGElement> & {
   circleColor?: string
@@ -17,6 +18,7 @@ const ClickingOnPC = ({ circleColor, ...props }: Props) => (
       cx="98.25"
       cy="98.25"
       r="98.25"
+      css={tw`animate-screenColorChange`}
       fill={circleColor ?? '#8ECAE6'}
       fillOpacity="0.2"
     />
@@ -86,7 +88,7 @@ const ClickingOnPC = ({ circleColor, ...props }: Props) => (
       stroke="#78BAFF"
       strokeWidth="0.400325"
     />
-    <g id="hand">
+    <g id="Computer">
       <rect
         x="59.5"
         y="133.5"
@@ -115,6 +117,8 @@ const ClickingOnPC = ({ circleColor, ...props }: Props) => (
         fill="#35383F"
         stroke="#78BAFF"
       />
+    </g>
+    <g id="hand" css={tw`animate-mouseDrag`}>
       <path
         d="M76.5 132.341C76.5 133.035 76.3503 133.28 76.2425 133.372C76.1302 133.468 75.9129 133.532 75.4399 133.483C75.1029 133.449 74.7252 133.37 74.2813 133.277C74.1105 133.242 73.9298 133.204 73.738 133.166C73.07 133.034 72.3086 132.909 71.5 132.909C70.6914 132.909 69.93 133.034 69.262 133.166C69.0702 133.204 68.8895 133.242 68.7188 133.277C68.2748 133.37 67.8971 133.449 67.5601 133.483C67.0871 133.532 66.8698 133.468 66.7575 133.372C66.6497 133.28 66.5 133.035 66.5 132.341C66.5 129.681 68.7246 127.5 71.5 127.5C74.2754 127.5 76.5 129.681 76.5 132.341Z"
         fill="#8ECAE6"

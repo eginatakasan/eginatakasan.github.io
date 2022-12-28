@@ -1,8 +1,8 @@
 import tw from 'twin.macro'
 
-const Text = tw.p`[font-size: 16px] md:([font-size: 18px]) text-textBlack m-0 [line-height: 22px]`
-const HeadingOne = tw.h1`[font-size: 32px] md:([font-size: 40px]) text-accent m-0 font-extrabold`
-const HeadingTwo = tw.h2`[font-size: 20px] md:([font-size: 20px]) text-textBlack m-0 font-bold`
+const Text = tw.p`[font-size: 16px] md:([font-size: 18px]) text-textBlack m-0`
+const HeadingOne = tw.h1`[font-size: 32px] md:([font-size: 48px]) text-accent m-0 font-extrabold`
+const HeadingTwo = tw.h2`[font-size: 20px] md:([font-size: 24px]) text-textBlack m-0 font-bold`
 const Small = tw.span`[font-size: 14px] md:([font-size: 16px]) text-textBlack m-0 font-light`
 
 export default Object.assign(Text, { HeadingOne, HeadingTwo, Small })
