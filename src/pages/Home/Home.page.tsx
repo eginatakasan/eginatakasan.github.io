@@ -1,11 +1,11 @@
 import React from 'react'
 import tw from 'twin.macro'
-import AboutView from '../../views/About/About.view'
+import LandingView from '../../views/Landing/Landing.view'
 
 const HomePage = () => {
   return (
     <div css={tw`w-full h-full`}>
-      <AboutView />
+      <LandingView />
     </div>
   )
 }
