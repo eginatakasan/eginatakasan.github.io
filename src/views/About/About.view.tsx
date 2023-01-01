@@ -1,7 +1,53 @@
+import Text from '../../components/atoms/Text/Text.atom'
 import React from 'react'
+import tw, { styled } from 'twin.macro'
 
-type Props = {}
+export type AboutMeItem = {
+  icon: React.ReactNode
+  header: string
+  description: React.ReactNode
+}
+type Props = {
+  items: AboutMeItem[]
+}
 
-const AboutView = () => {}
+const Container = tw.div`flex flex-col pt-12 pl-8 pr-6`
+const ListContainer = tw.li`flex flex-col gap-2 mb-4 items-start relative`
+const ListHeadingContainer = tw.div`flex flex-row w-full mb-2 gap-4 justify-start`
+const ListContent = tw.div`flex flex-row flex-1 justify-between`
+const IconContainer = tw.div`inline-flex w-8 flex-[0 0 32px] text-primary-light`
+const Line = styled.div<{ last?: boolean }>(({ last }) => [
+  tw`ml-4 border-0 border-l border-solid border-primary-light`,
+  last && tw`border-l-0`,
+])
+
+const ListHeading = tw.div`flex-1 mt-1 font-semibold text-primary-light`
+const ListDescription = tw.div`ml-11 mb-6 font-extralight text-textWhite whitespace-pre-line [line-height: 1.5]`
+
+const AboutView = ({ items }: Props) => {
+  return (
+    <Container>
+      <div css={tw`flex items-center justify-center text-center`}>
+        <Text.HeadingTwo css={tw`text-textWhite mt-5 mb-10`}>
+          About Me
+        </Text.HeadingTwo>
+      </div>
+      <ul>
+        {items.map(({ icon, header, description }) => (
+          <ListContainer>
+            <ListHeadingContainer>
+              <IconContainer>{icon}</IconContainer>
+              <ListHeading>{header}</ListHeading>
+            </ListHeadingContainer>
+            <ListContent>
+              <Line />
+              <ListDescription>{description}</ListDescription>
+            </ListContent>
+          </ListContainer>
+        ))}
+      </ul>
+    </Container>
+  )
+}
 
 export default AboutView

@@ -5,8 +5,9 @@ import Text from '../../components/atoms/Text/Text.atom'
 import Button from '../../components/atoms/Button/Button.atom'
 import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline'
 import { css } from '@emotion/react'
+import { Link } from 'react-router-dom'
 
-const Container = tw.div`flex flex-col min-h-screen box-border w-full relative bg-textBlack overflow-hidden md:()`
+const Container = tw.div`flex flex-col min-h-screen box-border w-full relative [background-image: linear-gradient(180.03deg, #1E1E1E 51.11%, #1B2123 99.97%)] overflow-hidden md:()`
 const Greeting = tw.div`w-full flex flex-row pt-12 pb-5 pl-12 md:(px-0 flex-col items-center text-center)`
 const About = tw.div`w-full flex flex-col relative mt-[0px]`
 const Portfolio = tw.div`w-full flex flex-col relative`
@@ -15,7 +16,7 @@ const SmallScreenView = tw.div`w-full flex flex-col md:(hidden)`
 // #region LARGE SCREEN VIEW
 const LgScreenView = tw.div`w-full flex-1 hidden flex-col md:(flex) relative`
 const LgAboutPortfolio = tw.div`flex flex-row w-full justify-center mt-12 mb-12 relative`
-const LgCard = tw.div`flex flex-col text-center items-center py-10 px-12 w-[360px] max-w-full border border-solid bg-textBlack border-accent rounded-xl z-20`
+const LgCard = tw.div`flex flex-col text-center items-center py-8 px-12 w-[360px] max-w-full border border-solid bg-textBlack border-accent rounded-xl z-20`
 // #endregion
 
 const LandingView = () => {
@@ -29,7 +30,7 @@ const LandingView = () => {
           <Text.HeadingOne css={tw`mt-1`}>Eginata Kasan</Text.HeadingOne>
         </div>
         <Vectors.ClickingOnPC
-          css={tw`hidden md:(flex w-[200px] h-[200px]) mt-10`}
+          css={tw`hidden md:(flex w-[200px] h-[200px]) mt-8`}
         />
       </Greeting>
 
@@ -66,7 +67,9 @@ const LandingView = () => {
             <Text.Small
               css={tw`text-white text-center whitespace-pre font-light`}
             >
-              Welcome to my Portfolio website.{'\n'}Click below to see my resume
+              Welcome to my Portfolio website!
+              <br />
+              Click below to see my resume
             </Text.Small>
             <Button css={tw`mt-[32px]`}>Download PDF Resume</Button>
           </div>
@@ -88,7 +91,9 @@ const LandingView = () => {
             <Text.Small
               css={tw`text-primary-light text-center whitespace-pre font-light`}
             >
-              Welcome to my Portfolio website.{'\n'}Click below to see my resume
+              Welcome to my Portfolio website.
+              <br />
+              Click below to see my resume
             </Text.Small>
             <Button css={tw`mt-[20px]`}>Download PDF Resume</Button>
           </LgCard>
@@ -102,12 +107,13 @@ const LandingView = () => {
       </LgScreenView>
 
       <div
-        css={tw`absolute inline-flex flex-col items-center bottom-1 left-1/2 -translate-x-1/2 text-primary-light hover:text-accent cursor-pointer z-20`}
+        css={tw`absolute inline-flex flex-col items-center bottom-1.5 left-1/2 -translate-x-1/2 text-primary-light hover:text-accent cursor-pointer z-10`}
       >
         <Text.Small
           css={tw`text-center text-inherit md:(font-semibold text-textBlack)`}
         >
-          Check out my playground
+          Check out more about me
+          <span css={tw`hidden md:inline`}> or my playground</span>
         </Text.Small>
         <ChevronDoubleDownIcon
           width={40}
