@@ -27,7 +27,7 @@ const LandingView = () => {
           <Text css={tw`font-light text-textWhite whitespace-pre`}>
             Hi! My name is
           </Text>
-          <Text.HeadingOne css={tw`mt-1`}>Eginata Kasan</Text.HeadingOne>
+          <Text.Title css={tw`mt-1`}>Eginata Kasan</Text.Title>
         </div>
         <Vectors.ClickingOnPC
           css={tw`hidden md:(flex w-[200px] h-[200px]) mt-8`}
