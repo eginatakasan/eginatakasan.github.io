@@ -1,6 +1,7 @@
 import Text from '../../components/atoms/Text/Text.atom'
 import React from 'react'
 import tw, { styled } from 'twin.macro'
+import AboutMeDecor from '../../assets/vectors/AboutMeDecor.vector'
 
 export type AboutMeItem = {
   icon: React.ReactNode
@@ -11,7 +12,7 @@ type Props = {
   items: AboutMeItem[]
 }
 
-const Container = tw.div`flex flex-col pt-12 pl-8 pr-6 md:(max-w-2xl justify-center mx-auto)`
+const Container = tw.div`w-full relative [background-image: linear-gradient(180deg, #1E1E1E 39.66%, #111D28 100%);]`
 const ListContainer = tw.li`flex flex-col gap-2 mb-4 items-start relative md:(ml-4)`
 const ListHeadingContainer = tw.div`flex flex-row w-full mb-2 gap-4 justify-start`
 const ListContent = tw.div`flex flex-row flex-1 justify-between`
@@ -28,26 +29,30 @@ const AboutView = ({ items }: Props) => {
   return (
     <Container>
       <div
-        css={tw`flex items-center justify-center text-center md:(text-left justify-start)`}
+        css={tw`flex flex-col pt-12 pl-8 pr-6 pb-6  relative md:(max-w-2xl justify-center mx-auto pb-10)`}
       >
-        <Text.HeadingOne css={tw`text-textWhite mt-5 mb-10`}>
-          About Me
-        </Text.HeadingOne>
+        <div
+          css={tw`flex items-center justify-center text-center md:(text-left justify-start) z-10`}
+        >
+          <Text.HeadingOne id="about" css={tw`text-textWhite mt-5 mb-10`}>
+            About Me
+          </Text.HeadingOne>
+        </div>
+        <ul>
+          {items.map(({ icon, header, description }) => (
+            <ListContainer>
+              <ListHeadingContainer>
+                <IconContainer>{icon}</IconContainer>
+                <ListHeading>{header}</ListHeading>
+              </ListHeadingContainer>
+              <ListContent>
+                <Line />
+                <ListDescription>{description}</ListDescription>
+              </ListContent>
+            </ListContainer>
+          ))}
+        </ul>
       </div>
-      <ul>
-        {items.map(({ icon, header, description }) => (
-          <ListContainer>
-            <ListHeadingContainer>
-              <IconContainer>{icon}</IconContainer>
-              <ListHeading>{header}</ListHeading>
-            </ListHeadingContainer>
-            <ListContent>
-              <Line />
-              <ListDescription>{description}</ListDescription>
-            </ListContent>
-          </ListContainer>
-        ))}
-      </ul>
     </Container>
   )
 }

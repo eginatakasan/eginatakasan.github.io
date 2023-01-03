@@ -3,11 +3,15 @@ import React from 'react'
 import tw from 'twin.macro'
 import Text from '../../components/atoms/Text/Text.atom'
 import Button from '../../components/atoms/Button/Button.atom'
-import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline'
+import {
+  ArrowDownTrayIcon,
+  ChevronDoubleDownIcon,
+} from '@heroicons/react/24/outline'
 import { css } from '@emotion/react'
 import { Link } from 'react-router-dom'
 
 const Container = tw.div`flex flex-col min-h-screen box-border w-full relative [background-image: linear-gradient(180.03deg, #1E1E1E 51.11%, #1B2123 99.97%)] overflow-hidden md:()`
+const Navigation = tw.div`hidden md:(absolute inset-x-0 top-0 flex flex-row justify-end gap-10 px-12 pt-8 py-4 font-semibold)`
 const Greeting = tw.div`w-full flex flex-row pt-12 pb-5 pl-12 md:(px-0 flex-col items-center text-center)`
 const About = tw.div`w-full flex flex-col relative mt-[0px]`
 const Portfolio = tw.div`w-full flex flex-col relative`
@@ -22,6 +26,10 @@ const LgCard = tw.div`flex flex-col text-center items-center py-8 px-12 w-[360px
 const LandingView = () => {
   return (
     <Container>
+      <Navigation>
+        <a href="#about">About Me</a>
+        <a href="#playground">Playground</a>
+      </Navigation>
       <Greeting>
         <div css={tw`flex flex-col mr-[180px] md:mr-0`}>
           <Text css={tw`font-light text-textWhite whitespace-pre`}>
@@ -64,14 +72,17 @@ const LandingView = () => {
           <div
             css={tw`flex flex-col items-center mt-8 mb-24 z-10 md:(mt-4 mb-10)`}
           >
-            <Text.Small
-              css={tw`text-white text-center whitespace-pre font-light`}
-            >
+            <Text.Small css={tw`text-white text-center whitespace-pre`}>
               Welcome to my Portfolio website!
               <br />
               Click below to see my resume
             </Text.Small>
-            <Button css={tw`mt-[32px]`}>Download PDF Resume</Button>
+            <a href="/resume.pdf" download="Eginata Kasan - resume">
+              <Button css={tw`mt-[32px] items-center justify-center`}>
+                <ArrowDownTrayIcon css={tw`inline-block w-4 h-4 mr-2`} />
+                Download PDF Resume
+              </Button>
+            </a>
           </div>
         </Portfolio>
       </SmallScreenView>
@@ -95,7 +106,12 @@ const LandingView = () => {
               <br />
               Click below to see my resume
             </Text.Small>
-            <Button css={tw`mt-[20px]`}>Download PDF Resume</Button>
+            <a href="/resume.pdf" download="Eginata Kasan - resume">
+              <Button css={tw`mt-[20px]`}>
+                <ArrowDownTrayIcon css={tw`inline-block w-4 h-4 mr-2`} />{' '}
+                Download PDF Resume
+              </Button>
+            </a>
           </LgCard>
         </LgAboutPortfolio>
         <Vectors.LandingRoundedBg
@@ -106,20 +122,22 @@ const LandingView = () => {
         />
       </LgScreenView>
 
-      <div
+      <a
+        href="#about"
+        className="group"
         css={tw`absolute inline-flex flex-col items-center bottom-1.5 left-1/2 -translate-x-1/2 text-primary-light hover:text-accent cursor-pointer z-10`}
       >
         <Text.Small
           css={tw`text-center text-inherit md:(font-semibold text-textBlack)`}
         >
-          Check out more about me
+          Find out more about me
           <span css={tw`hidden md:inline`}> or my playground</span>
         </Text.Small>
         <ChevronDoubleDownIcon
           width={40}
-          css={tw`text-inherit stroke-1 md:(text-white stroke-2)`}
+          css={tw`text-inherit stroke-1 group-hover:(text-inherit) md:(text-white stroke-2)`}
         />
-      </div>
+      </a>
     </Container>
   )
 }

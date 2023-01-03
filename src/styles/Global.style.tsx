@@ -13,6 +13,9 @@ const customStyles: Interpolation<Theme> = [
   {
     a: {
       color: theme`colors.accent`,
+      ':hover': {
+        color: theme`colors.primary.light`,
+      },
     },
   },
 ]
