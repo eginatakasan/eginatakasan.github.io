@@ -1,7 +1,7 @@
 {
   "name": "egi-portofolio",
   "version": "0.1.0",
-  "homepage": "https://eginatakasan.github.io/",
+  "homepage": "https://eginatakasan.github.io",
   "private": true,
   "babelMacros": {
     "twin": {
@@ -14,7 +14,7 @@
     "build": "webpack --mode=production",
     "serve": "npx serve public",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build -r git@github.com:eginatakasan/Egi-portfolio.git -t true"
+    "deploy": "gh-pages -d public -r git@github.com:eginatakasan/Egi-portfolio.git -t true"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
