@@ -14,7 +14,7 @@
     "build": "webpack --mode=production",
     "serve": "npx serve public",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d public -r git@github.com:eginatakasan/Egi-portfolio.git -t true"
+    "deploy": "gh-pages -d public -r git@github.com:eginatakasan/eginatakasan.github.io -t true"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -37,6 +37,7 @@
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.1.0",
     "css-loader": "^6.7.3",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^8.30.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.6.0",

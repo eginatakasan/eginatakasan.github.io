@@ -1,13 +1,16 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 
-module.exports = function webpackConfig(env, args) {
+module.exports = function webpackConfig(env, { mode }) {
   return {
     entry: path.join(__dirname, 'src/index.tsx'),
     output: {
       filename: 'main.js',
       path: path.join(__dirname, 'public'),
     },
-    resolve: { extensions: ['.ts', '.tsx', '.js'] },
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js'],
+    },
     module: {
       rules: [
         {
@@ -35,5 +38,10 @@ module.exports = function webpackConfig(env, args) {
       open: true,
       static: { directory: path.join(__dirname, 'public') },
     },
+    plugins: [
+      new Dotenv({
+        path: `./.env.${mode}`,
+      }),
+    ],
   }
 }

@@ -8,9 +8,8 @@ import {
   ArrowDownTrayIcon,
   ChevronDoubleDownIcon,
 } from '@heroicons/react/24/outline'
-import { css } from '@emotion/react'
-import { Link } from 'react-router-dom'
 import Icon from '../../components/atoms/Icon'
+import url from '../../constants/url.constant'
 
 const Container = tw.div`flex flex-col h-screen min-h-[800px] box-border w-full relative [background-image: linear-gradient(180.03deg, #1E1E1E 51.11%, #1B2123 99.97%)] overflow-hidden md:(min-h-screen)`
 const Navigation = tw.div`hidden md:(absolute inset-x-0 top-0 flex flex-row justify-end gap-10 px-12 pt-8 py-3 font-semibold)`
@@ -85,7 +84,7 @@ const LandingView = () => {
               Click below to see my resume
             </Text.Small>
             <div css={tw`mt-[32px]`}>
-              <a href="/resume.pdf" download="Eginata Kasan - resume">
+              <a href={url.resume} download="Eginata Kasan - resume">
                 <Button css={tw`items-center justify-center`}>
                   <ArrowDownTrayIcon css={tw`inline-block w-4 h-4 mr-2`} />
                   Download Resume
@@ -99,13 +98,13 @@ const LandingView = () => {
           <div css={tw`[font-size: 14px] text-primary-light py-4`}>or</div>
           <span css={tw`text-white mb-1`}>Contact Me</span>
           <ContactContainer>
-            <ContactLink href="mailto:eginatakasan@gmail.com">
+            <ContactLink href={url.mail}>
               <EnvelopeIcon />
             </ContactLink>
-            <ContactLink href="https://www.linkedin.com/in/eginata-kasan-74a72516b/">
+            <ContactLink href={url.linkedin}>
               <Icon.LinkedIn css={tw`w-8 h-8`} />
             </ContactLink>
-            <ContactLink href="https://github.com/eginatakasan/">
+            <ContactLink href={url.github}>
               <Icon.Github css={tw`w-8 h-8`} />
             </ContactLink>
           </ContactContainer>
@@ -113,13 +112,13 @@ const LandingView = () => {
       </SmScreenView>
 
       <LgContacts>
-        <LgContactLink href="mailto:eginatakasan@gmail.com">
+        <LgContactLink href={url.mail}>
           <EnvelopeIcon />
         </LgContactLink>
-        <LgContactLink href="https://www.linkedin.com/in/eginata-kasan-74a72516b/">
+        <LgContactLink href={url.linkedin}>
           <Icon.LinkedIn />
         </LgContactLink>
-        <LgContactLink href="https://github.com/eginatakasan/">
+        <LgContactLink href={url.github}>
           <Icon.Github />
         </LgContactLink>
       </LgContacts>
