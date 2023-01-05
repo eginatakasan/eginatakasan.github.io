@@ -48,7 +48,10 @@ module.exports = {
           dark: '#1F3449',
         },
         secondary: '#35383F',
-        accent: '#78BAFF',
+        accent: {
+          DEFAULT: '#78BAFF',
+          dark: '#0E5AA9',
+        },
         teal: '#219EBC',
         skyBlue: '#78BAFF',
         textBlack: '#1E1E1E',

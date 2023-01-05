@@ -11,7 +11,7 @@ import {
 import Icon from '../../components/atoms/Icon'
 import url from '../../constants/url.constant'
 
-const Container = tw.div`flex flex-col h-screen min-h-[800px] box-border w-full relative [background-image: linear-gradient(180.03deg, #1E1E1E 51.11%, #1B2123 99.97%)] overflow-hidden md:(min-h-screen)`
+const Container = tw.div`flex flex-col h-screen min-h-[820px] box-border w-full relative [background-image: linear-gradient(180.03deg, #1E1E1E 51.11%, #1B2123 99.97%)] overflow-hidden md:(min-h-screen)`
 const Navigation = tw.div`hidden md:(absolute inset-x-0 top-0 flex flex-row justify-end gap-10 px-12 pt-8 py-3 font-semibold)`
 const Greeting = tw.div`w-full flex flex-row pt-12 pb-5 pl-12 md:(pt-14 px-0 flex-col items-center text-center)`
 const About = tw.div`w-full flex flex-col relative mt-[0px]`
@@ -96,7 +96,7 @@ const LandingView = () => {
 
         <Contacts>
           <div css={tw`[font-size: 14px] text-primary-light py-4`}>or</div>
-          <span css={tw`text-white mb-1`}>Contact Me</span>
+          <span css={tw`text-white mb-1 [font-size: 14px]`}>Contact Me</span>
           <ContactContainer>
             <ContactLink href={url.mail}>
               <EnvelopeIcon />
