@@ -3,6 +3,14 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
+        eyesGlance: {
+          from: {
+            transform: 'translateX(0px)',
+          },
+          to: {
+            transform: 'translateX(1px)',
+          },
+        },
         mouseDrag: {
           '0%': {
             transform: 'translateX(2px)',
@@ -17,13 +25,9 @@ module.exports = {
             transform: 'translateX(0)',
           },
         },
-        thumbUp: {
-          '0%': 'rotate(45deg)',
-          '100%': 'rotate(0deg)',
-        },
         screenColorChange: {
           '0%': {
-            fill: '#8ECAE6',
+            fill: '#219EBC',
           },
           '100%': {
             fill: '#78BAFF',
@@ -31,12 +35,12 @@ module.exports = {
         },
       },
       animation: {
-        mouseDrag: 'mouseDrag 8s ease-in-out infinite alternate',
-        thumbUp: 'thumbUp 2s ease-in-out infinite alternate',
-        screenColorChange: 'screenColorChange 4s linear infinite alternate',
+        eyesGlance: 'eyesGlance 4s ease-in-out infinite alternate',
+        mouseDrag: 'mouseDrag 4s ease-in-out infinite alternate',
+        screenColorChange: 'screenColorChange 2s linear infinite alternate',
       },
       fontFamily: {
-        nunitoSans: '',
+        nunitoSans: 'Nunito-Sans',
       },
       colors: {
         primary: {

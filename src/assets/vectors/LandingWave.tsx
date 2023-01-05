@@ -3,7 +3,7 @@ import tw from 'twin.macro'
 
 type Props = React.HTMLAttributes<SVGSVGElement>
 
-const AboutMeWave = (props: Props) => (
+const LandingWave = (props: Props) => (
   <svg
     width="393"
     height="32"
@@ -31,4 +31,4 @@ const AboutMeWave = (props: Props) => (
   </svg>
 )
 
-export default AboutMeWave
+export default LandingWave

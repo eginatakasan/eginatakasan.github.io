@@ -1,118 +1,57 @@
-import Vectors from '../../assets/vectors'
-import React from 'react'
-import tw from 'twin.macro'
 import Text from '../../components/atoms/Text/Text.atom'
-import Button from '../../components/atoms/Button/Button.atom'
-import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline'
-import { css } from '@emotion/react'
+import React from 'react'
+import tw, { styled } from 'twin.macro'
+import AboutMeDecor from '../../assets/vectors/AboutMeDecor.vector'
 
-const Container = tw.div`flex flex-col min-h-screen box-border w-full relative bg-textBlack overflow-hidden md:()`
-const Greeting = tw.div`w-full flex flex-row pt-12 pb-5 pl-12 md:(px-0 flex-col items-center text-center)`
-const About = tw.div`w-full flex flex-col relative mt-[0px]`
-const Portfolio = tw.div`w-full flex flex-col relative`
-const SmallScreenView = tw.div`w-full flex flex-col md:(hidden)`
+export type AboutMeItem = {
+  icon: React.ReactNode
+  header: string
+  description: React.ReactNode
+}
+type Props = {
+  items: AboutMeItem[]
+}
 
-// #region LARGE SCREEN VIEW
-const LgScreenView = tw.div`w-full flex-1 hidden flex-col md:(flex) relative`
-const LgAboutPortfolio = tw.div`flex flex-row w-full justify-center mt-12 mb-12 relative`
-const LgCard = tw.div`flex flex-col text-center items-center py-10 px-12 w-[360px] max-w-full border border-solid bg-textBlack border-accent rounded-xl z-20`
-// #endregion
+const Container = tw.div`w-full relative [background-image: linear-gradient(180deg, #1E1E1E 39.66%, #111D28 100%);]`
+const ListContainer = tw.li`flex flex-col gap-2 mb-4 items-start relative md:(ml-4)`
+const ListHeadingContainer = tw.div`flex flex-row w-full mb-2 gap-4 justify-start`
+const ListContent = tw.div`flex flex-row flex-1 justify-between`
+const IconContainer = tw.div`inline-flex w-8 flex-[0 0 32px] text-primary-light`
+const Line = styled.div<{ last?: boolean }>(({ last }) => [
+  tw`ml-4 border-0 border-l border-solid border-primary-light`,
+  last && tw`border-l-0`,
+])
 
-const AboutView = () => {
+const ListHeading = tw.div`flex-1 mt-1 font-semibold text-primary-light`
+const ListDescription = tw.div`ml-11 mb-6 font-extralight text-textWhite whitespace-pre-line [line-height: 1.5]`
+
+const AboutView = ({ items }: Props) => {
   return (
     <Container>
-      <Greeting>
-        <div css={tw`flex flex-col mr-[180px] md:mr-0`}>
-          <Text css={tw`font-light text-textWhite whitespace-pre`}>
-            Hi! My name is
-          </Text>
-          <Text.HeadingOne css={tw`mt-1`}>Eginata Kasan</Text.HeadingOne>
-        </div>
-        <Vectors.ClickingOnPC
-          css={tw`hidden md:(flex w-[200px] h-[200px]) mt-10`}
-        />
-      </Greeting>
-
-      <SmallScreenView>
-        <About>
-          <Vectors.ClickingOnPC
-            css={tw`absolute top-0 -translate-y-[108px] right-0 flex justify-center items-center md:(hidden)`}
-          />
-          <Vectors.AboutMeRoundedBg css={tw`w-full h-auto z-10`} />
-          <div
-            css={tw`z-20 h-32 [background-image: linear-gradient(180deg, #8ECAE6 11.38%, #1F3449 100%)] -translate-y-0.5 relative md:(h-28)`}
-          >
-            <div css={tw`absolute -top-[1.5em] inset-x-0 px-12`}>
-              <Text css={tw`font-semibold mb-1`}>I am a software engineer</Text>
-              <div css={tw`ml-3`}>
-                <Text.Small>
-                  I specialize in UI/UX - I love crafting beautiful user
-                  interface with awesome user experience.
-                </Text.Small>
-              </div>
-            </div>
-          </div>
-          <Vectors.AboutMeWave
-            css={tw`absolute inset-x-0 w-full h-auto bottom-2 opacity-30 z-20`}
-          />
-        </About>
-        <Portfolio>
-          <div
-            css={tw`absolute bg-primary-dark -top-2 -left-[10%] w-[120%] h-[140px] rounded-b-[50%]`}
-          />
-          <div
-            css={tw`flex flex-col items-center mt-8 mb-24 z-10 md:(mt-4 mb-10)`}
-          >
-            <Text.Small
-              css={tw`text-white text-center whitespace-pre font-light`}
-            >
-              Welcome to my Portfolio website.{'\n'}Click below to see my resume
-            </Text.Small>
-            <Button css={tw`mt-[32px]`}>Download PDF Resume</Button>
-          </div>
-        </Portfolio>
-      </SmallScreenView>
-
-      <LgScreenView>
-        <LgAboutPortfolio>
-          <LgCard css={tw`rounded-r-none`}>
-            <Text css={tw`font-semibold mb-1 text-primary-light`}>
-              I am a software engineer
-            </Text>
-            <Text.Small css={tw`text-textWhite`}>
-              I specialize in UI/UX - I love crafting beautiful user interface
-              with awesome user experience.
-            </Text.Small>
-          </LgCard>
-          <LgCard css={tw`border-l-0 rounded-l-none`}>
-            <Text.Small
-              css={tw`text-primary-light text-center whitespace-pre font-light`}
-            >
-              Welcome to my Portfolio website.{'\n'}Click below to see my resume
-            </Text.Small>
-            <Button css={tw`mt-[20px]`}>Download PDF Resume</Button>
-          </LgCard>
-        </LgAboutPortfolio>
-        <Vectors.AboutMeRoundedBg
-          css={tw`w-full h-auto z-10 absolute bottom-0`}
-        />
-        <Vectors.AboutMeWave
-          css={tw`absolute inset-x-0 w-full h-auto bottom-1/2 opacity-20 z-0`}
-        />
-      </LgScreenView>
-
       <div
-        css={tw`absolute inline-flex flex-col items-center bottom-1 left-1/2 -translate-x-1/2 text-primary-light hover:text-accent cursor-pointer z-20`}
+        css={tw`flex flex-col pt-12 pl-8 pr-6 pb-6  relative md:(max-w-2xl justify-center mx-auto pb-10)`}
       >
-        <Text.Small
-          css={tw`text-center text-inherit md:(font-semibold text-textBlack)`}
+        <div
+          css={tw`flex items-center justify-center text-center md:(text-left justify-start) z-10`}
         >
-          Check out my playground
-        </Text.Small>
-        <ChevronDoubleDownIcon
-          width={40}
-          css={tw`text-inherit stroke-1 md:(text-white stroke-2)`}
-        />
+          <Text.HeadingOne id="about" css={tw`text-textWhite mt-5 mb-10`}>
+            About Me
+          </Text.HeadingOne>
+        </div>
+        <ul>
+          {items.map(({ icon, header, description }) => (
+            <ListContainer>
+              <ListHeadingContainer>
+                <IconContainer>{icon}</IconContainer>
+                <ListHeading>{header}</ListHeading>
+              </ListHeadingContainer>
+              <ListContent>
+                <Line />
+                <ListDescription>{description}</ListDescription>
+              </ListContent>
+            </ListContainer>
+          ))}
+        </ul>
       </div>
     </Container>
   )
