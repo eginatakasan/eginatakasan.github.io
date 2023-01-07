@@ -4,12 +4,20 @@ import Text from '../../components/atoms/Text/Text.atom'
 import React from 'react'
 import tw from 'twin.macro'
 
-type Props = {}
+export type PlaygroundItems = {
+  header: string
+  description: string
+  tags: string[]
+  link: string
+}
+type Props = {
+  items: PlaygroundItems[]
+}
 
 const Container = tw.div`w-full flex flex-col pt-12 pl-8 pr-6 pb-12 relative md:(pb-12)`
 const Grid = tw.div`grid-rows-2 justify-center items-center mx-auto`
-const Card = tw.div`inline-flex flex-col items-center font-light text-center px-3 py-8 md:(w-[460px] px-10 pt-16 pb-10 h-auto )`
-const CardHeading = tw(Text.HeadingTwo)`md:(mb-4)`
+const Card = tw.div`inline-flex flex-col items-center font-light text-center px-4 py-8 md:(w-[460px] px-10 pt-16 pb-10 h-auto )`
+const CardHeading = tw(Text.HeadingTwo)`mb-2 md:(mb-4)`
 const CardHighlight = tw(Text.Small)``
 const CardCss = css`
   .card:nth-child(3n + 1) {
@@ -46,7 +54,7 @@ const CardCss = css`
   }
 `
 
-const PlaygroundView = () => {
+const PlaygroundView = ({ items }: Props) => {
   return (
     <Container>
       <Text.HeadingOne
@@ -56,33 +64,20 @@ const PlaygroundView = () => {
         Playground
       </Text.HeadingOne>
       <Grid css={CardCss}>
-        <Card className="card" css={CardCss}>
-          <CardHeading className="heading">CSS Animation</CardHeading>
-          <Text css={tw`text-inherit`}>
-            An experiment consisting smooth transitions and moving SVG
-            animations
-          </Text>
-          <CardHighlight className="highlight">#CSS #HTML</CardHighlight>
-          <Button css={tw`mt-6 md:(mt-16)`}>Check it out</Button>
-        </Card>
-        <Card className="card" css={[CardCss]}>
-          <CardHeading className="heading">CSS Animation</CardHeading>
-          <Text css={tw`text-inherit`}>
-            An experiment consisting smooth transitions and moving SVG
-            animations
-          </Text>
-          <CardHighlight className="highlight">#CSS #HTML</CardHighlight>
-          <Button css={tw`mt-6 md:(mt-16)`}>Check it out</Button>
-        </Card>
-        <Card className="card" css={[CardCss]}>
-          <CardHeading className="heading">CSS Animation</CardHeading>
-          <Text css={tw`text-inherit`}>
-            An experiment consisting smooth transitions and moving SVG
-            animations
-          </Text>
-          <CardHighlight className="highlight">#CSS #HTML</CardHighlight>
-          <Button css={tw`mt-6 md:(mt-16)`}>Check it out</Button>
-        </Card>
+        {items.map(({ header, description, tags, link }) => (
+          <Card className="card" css={CardCss}>
+            <CardHeading className="heading">{header}</CardHeading>
+            <Text css={tw`text-inherit`}>{description}</Text>
+            <CardHighlight className="highlight">
+              {tags.join(' ')}
+            </CardHighlight>
+            {link && (
+              <a href={link}>
+                <Button css={tw`mt-6 md:(mt-16)`}>Check it out</Button>
+              </a>
+            )}
+          </Card>
+        ))}
       </Grid>
     </Container>
   )

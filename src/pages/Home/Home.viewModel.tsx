@@ -3,6 +3,8 @@ import { AboutMeItem } from 'views/About/About.view'
 import { AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/24/outline'
 import Icon from '../../components/atoms/Icon'
 import tw from 'twin.macro'
+import { PlaygroundItems } from 'views/Playground/Playground.view'
+import AnimationsRoute from '../../pages/Animations/Animations.route'
 
 const useHomeViewModel = () => {
   const aboutMeItems: AboutMeItem[] = [
@@ -62,7 +64,17 @@ const useHomeViewModel = () => {
     },
   ]
 
-  return { aboutMeItems }
+  const playgroundItems: PlaygroundItems[] = [
+    {
+      header: 'CSS Animation',
+      description:
+        'An experiment consisting smooth transitions and moving SVG animations',
+      tags: ['#CSS', '#HTML'],
+      link: AnimationsRoute.path ?? '',
+    },
+  ]
+
+  return { aboutMeItems, playgroundItems }
 }
 
 export default useHomeViewModel

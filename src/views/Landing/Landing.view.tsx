@@ -95,8 +95,9 @@ const LandingView = () => {
         </Portfolio>
 
         <Contacts>
-          <div css={tw`[font-size: 14px] text-primary-light py-4`}>or</div>
-          <span css={tw`text-white mb-1 [font-size: 14px]`}>Contact Me</span>
+          <span css={tw`text-accent pt-8 mb-1 [font-size: 14px]`}>
+            Contact Me
+          </span>
           <ContactContainer>
             <ContactLink href={url.mail}>
               <EnvelopeIcon />

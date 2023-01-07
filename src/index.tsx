@@ -2,7 +2,6 @@ import CenteredContent from './components/template/CenteredContent.template'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom'
-import tw from 'twin.macro'
 import router from './router/router'
 import GlobalStyles from './styles/Global.style'
 

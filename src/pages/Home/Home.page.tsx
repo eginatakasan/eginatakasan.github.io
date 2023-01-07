@@ -6,12 +6,12 @@ import LandingView from '../../views/Landing/Landing.view'
 import useHomeViewModel from './Home.viewModel'
 
 const HomePage = () => {
-  const { aboutMeItems } = useHomeViewModel()
+  const { aboutMeItems, playgroundItems } = useHomeViewModel()
   return (
     <div css={tw`w-full h-full flex flex-col`}>
       <LandingView />
       <AboutView items={aboutMeItems} />
-      <PlaygroundView />
+      <PlaygroundView items={playgroundItems} />
     </div>
   )
 }
