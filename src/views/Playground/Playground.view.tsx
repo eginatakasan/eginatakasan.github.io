@@ -21,7 +21,7 @@ const CardHeading = tw(Text.HeadingTwo)`mb-2 md:(mb-4)`;
 const CardHighlight = tw(Text.Small)``;
 const CardCss = css`
   .card:nth-of-type(3n + 1) {
-    background-color: #8ecae6;
+    background-color: #0a9396;
     color: #1e1e1e;
   }
   .card:nth-of-type(3n + 1) .heading {
@@ -36,7 +36,7 @@ const CardCss = css`
     color: white;
   }
   .card:nth-of-type(3n + 2) .heading {
-    color: #8ecae6;
+    color: #0a9396;
   }
   .card:nth-of-type(3n + 2) .highlight {
     color: #78baff;
@@ -47,7 +47,7 @@ const CardCss = css`
     color: white;
   }
   .card:nth-of-type(3n) .heading {
-    color: #8ecae6;
+    color: #0a9396;
   }
   .card:nth-of-type(3n) .highlight {
     color: #78baff;

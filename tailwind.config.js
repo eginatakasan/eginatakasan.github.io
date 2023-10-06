@@ -76,15 +76,15 @@ module.exports = {
       },
       colors: {
         primary: {
-          light: '#8ECAE6',
-          dark: '#1F3449',
+          light: '#0a9396',
+          dark: '#005f73',
         },
         secondary: '#35383F',
         accent: {
-          DEFAULT: '#78BAFF',
-          dark: '#0E5AA9',
+          DEFAULT: '#e9d8a6',
+          dark: '#ca6702',
         },
-        mustard: '#ffc300',
+        mustard: '#ee9b00',
         teal: '#219EBC',
         skyBlue: '#78BAFF',
         textBlack: '#1E1E1E',

@@ -6,11 +6,11 @@ type Props = {
   pageCount: number;
 };
 
-const Container = tw.div`fixed top-1/2 left-8 flex-col w-3 h-auto space-y-4 z-50`;
+const Container = tw.div`fixed top-1/2 left-8 flex-col w-3 h-auto space-y-6 z-50`;
 const Bullet = styled.div(
   ({ activeIdx, index }: { activeIdx: number; index: number }) => [
-    tw`w-3 h-3 border border-solid border-accent-dark rounded-full`,
-    activeIdx === index && tw`border-accent bg-accent`,
+    tw`w-3 h-3 border border-solid bg-gray-300 opacity-60 rotate-45`,
+    activeIdx === index && tw`border-accent bg-accent opacity-100`,
   ],
 );
 

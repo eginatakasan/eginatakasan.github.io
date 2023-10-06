@@ -55,6 +55,7 @@ const LandingView = () => {
       <Row tw="flex-1 justify-center items-center">
         <div tw="hidden md:(flex flex-[0.5])" />
         <Greeting>
+          <Text.Small tw="text-white font-light italic">(eggy)</Text.Small>
           <Text.HeadingOne tw="font-sofiaSans font-normal text-mustard">
             EGINATA KASAN
           </Text.HeadingOne>
@@ -104,7 +105,7 @@ const LandingView = () => {
         css={tw`absolute inline-flex flex-col items-center bottom-1.5 left-1/2 -translate-x-1/2 text-primary-light hover:text-accent cursor-pointer z-10`}
       >
         <Text.Small
-          css={tw`text-center text-inherit md:(font-semibold text-textBlack) mb-2`}
+          css={tw`text-center text-inherit md:(font-semibold text-textWhite) mb-2`}
         >
           Check out my projects
           {/* <span css={tw`hidden md:inline`}> and playground</span> */}

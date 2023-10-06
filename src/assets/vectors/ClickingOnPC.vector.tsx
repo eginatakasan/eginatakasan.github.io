@@ -1,9 +1,9 @@
-import React from 'react'
-import tw from 'twin.macro'
+import React from 'react';
+import tw from 'twin.macro';
 
 type Props = React.HTMLAttributes<SVGSVGElement> & {
-  circleColor?: string
-}
+  circleColor?: string;
+};
 
 const ClickingOnPC = ({ circleColor, ...props }: Props) => (
   <svg
@@ -14,7 +14,7 @@ const ClickingOnPC = ({ circleColor, ...props }: Props) => (
     {...props}
     xmlns="http://www.w3.org/2000/svg"
   >
-    <circle cx="98.25" cy="98.25" r="98.25" fill="#8ECAE6" fill-opacity="0.2" />
+    <circle cx="98.25" cy="98.25" r="98.25" fill="#0a9396" fill-opacity="0.2" />
     <path
       d="M66.3099 81.2163C71.1486 74.8326 79.0481 71.6201 86.5685 71.5033C94.0998 71.3864 101.117 74.3691 104.297 80.204C110.164 90.9712 109.532 100.134 109.35 101.833C109.331 102.015 109.3 102.196 109.262 102.391C108.011 108.811 102.423 113.47 95.883 113.545L77.872 113.752C69.764 113.846 62.3278 108.9 61.6558 100.993C61.1123 94.5987 61.8359 87.1188 66.3099 81.2163Z"
       fill="#35383F"
@@ -89,7 +89,7 @@ const ClickingOnPC = ({ circleColor, ...props }: Props) => (
         />
         <path
           d="M76.5 132.341C76.5 133.035 76.3503 133.28 76.2425 133.372C76.1302 133.468 75.9129 133.532 75.4399 133.483C75.1029 133.449 74.7252 133.37 74.2813 133.277C74.1105 133.242 73.9298 133.204 73.738 133.166C73.07 133.034 72.3086 132.909 71.5 132.909C70.6914 132.909 69.93 133.034 69.262 133.166C69.0702 133.204 68.8895 133.242 68.7188 133.277C68.2748 133.37 67.8971 133.449 67.5601 133.483C67.0871 133.532 66.8698 133.468 66.7575 133.372C66.6497 133.28 66.5 133.035 66.5 132.341C66.5 129.681 68.7246 127.5 71.5 127.5C74.2754 127.5 76.5 129.681 76.5 132.341Z"
-          fill="#8ECAE6"
+          fill="#0a9396"
           stroke="#78BAFF"
         />
         <ellipse cx="71.5" cy="130" rx="0.5" ry="1" fill="#35383F" />
@@ -120,7 +120,7 @@ const ClickingOnPC = ({ circleColor, ...props }: Props) => (
     <path
       id="keyboard"
       d="M95 130.5H119C120.763 130.5 122.222 131.804 122.465 133.5H91.5354C91.7781 131.804 93.2368 130.5 95 130.5Z"
-      fill="#8ECAE6"
+      fill="#0a9396"
       stroke="#78BAFF"
     />
     <rect
@@ -150,6 +150,6 @@ const ClickingOnPC = ({ circleColor, ...props }: Props) => (
       />
     </g>
   </svg>
-)
+);
 
-export default ClickingOnPC
+export default ClickingOnPC;
