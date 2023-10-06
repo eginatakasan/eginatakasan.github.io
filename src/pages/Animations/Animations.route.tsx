@@ -1,10 +1,10 @@
 import React from 'react'
 import { RouteObject } from 'react-router'
-import AnimationsView from './Animations.page'
+import AnimationsPage from './Animations.page'
 
 const AnimationsRoute: RouteObject = {
   path: '/animations',
-  element: <AnimationsView />,
+  element: <AnimationsPage />,
 }
 
 export default AnimationsRoute

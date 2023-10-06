@@ -1,12 +1,28 @@
-import React from 'react'
-import { AboutMeItem } from 'views/About/About.view'
-import { AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/24/outline'
-import Icon from '../../components/atoms/Icon'
-import tw from 'twin.macro'
-import { PlaygroundItems } from 'views/Playground/Playground.view'
-import AnimationsRoute from '../../pages/Animations/Animations.route'
+import React, { useCallback, useEffect, useState } from 'react';
+import { AboutMeItem } from 'views/About/About.view';
+import { AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
+import Icon from '../../components/atoms/Icon';
+import tw from 'twin.macro';
+import { PlaygroundItems } from 'views/Playground/Playground.view';
+import AnimationsRoute from '../../pages/Animations/Animations.route';
 
 const useHomeViewModel = () => {
+  const [sectionIdx, setSectionIdx] = useState<number>(0);
+
+  const onScroll = useCallback((e: Event) => {
+    setSectionIdx(window.scrollY % window.screenY);
+    console.log('scroll', window.scrollY % window.screenY);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', (e: Event) => {
+      console.log('scroll', window.scrollY % window.screenY);
+    });
+    console.log('home');
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const aboutMeItems: AboutMeItem[] = [
     {
       icon: <AcademicCapIcon />,
@@ -62,7 +78,7 @@ const useHomeViewModel = () => {
         </>
       ),
     },
-  ]
+  ];
 
   const playgroundItems: PlaygroundItems[] = [
     {
@@ -72,9 +88,9 @@ const useHomeViewModel = () => {
       tags: ['#CSS', '#HTML'],
       link: AnimationsRoute.path ?? '',
     },
-  ]
+  ];
 
-  return { aboutMeItems, playgroundItems }
-}
+  return { aboutMeItems, playgroundItems, sectionIdx };
+};
 
-export default useHomeViewModel
+export default useHomeViewModel;

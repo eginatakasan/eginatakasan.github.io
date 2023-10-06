@@ -25,6 +25,10 @@ module.exports = function webpackConfig(env, { mode }) {
           loader: require.resolve('css-loader'),
           // See .babelrc for further babel config
         },
+        {
+          test: /\.png/,
+          type: 'asset/resource'
+        }
       ],
     },
     optimization: {

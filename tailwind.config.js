@@ -33,14 +33,46 @@ module.exports = {
             fill: '#78BAFF',
           },
         },
+        gentleWave: {
+          '0%': {
+            transform: 'translateY(0) rotateX(0deg)',
+            opacity: 40,
+          },
+          '50%': {
+            transform: 'translateY(0) rotateX(20deg)',
+            opacity: 40,
+          },
+          '100%': {
+            transform: 'translateY(2px) rotateX(45deg)',
+            opacity: 10,
+          }
+        },
+        wave: {
+          '0%': {
+            transform: 'translateY(0px) rotateX(0deg)',
+            opacity: 40,
+          },
+          '50%': {
+            transform: 'translateY(4px) rotateX(30deg)',
+            opacity: 10,
+          },
+          '100%': {
+            transform: 'translateY(8px) rotateX(60deg)',
+            opacity: 10,
+          }
+        }
       },
       animation: {
         eyesGlance: 'eyesGlance 4s ease-in-out infinite alternate',
         mouseDrag: 'mouseDrag 4s ease-in-out infinite alternate',
         screenColorChange: 'screenColorChange 2s linear infinite alternate',
+        waves: 'wave 30s ease-in-out infinite alternate',
+        gentleWave: 'gentleWave 20s ease-in-out infinite alternate',
       },
       fontFamily: {
         nunitoSans: 'Nunito-Sans',
+        tokyo: 'Tokyo',
+        sofiaSans: 'Sofia Sans Extra Condensed',
       },
       colors: {
         primary: {
@@ -52,6 +84,7 @@ module.exports = {
           DEFAULT: '#78BAFF',
           dark: '#0E5AA9',
         },
+        mustard: '#ffc300',
         teal: '#219EBC',
         skyBlue: '#78BAFF',
         textBlack: '#1E1E1E',

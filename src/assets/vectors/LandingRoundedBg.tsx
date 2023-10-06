@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-type Props = React.HTMLAttributes<SVGSVGElement>
+type Props = React.HTMLAttributes<SVGSVGElement>;
 
 const AboutMeRoundedBg = (props: Props) => (
   <svg
     width="393"
     height="72"
     viewBox="0 0 393 72"
+    preserveAspectRatio="none"
     fill="none"
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -16,6 +17,6 @@ const AboutMeRoundedBg = (props: Props) => (
       fill="#8ECAE6"
     />
   </svg>
-)
+);
 
-export default AboutMeRoundedBg
+export default AboutMeRoundedBg;
