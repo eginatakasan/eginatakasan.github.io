@@ -16,7 +16,7 @@ const Container = tw.div`flex flex-col h-screen min-h-[820px] box-border w-full 
 const Header = tw.div`hidden md:(fixed top-0 inset-x-0 z-50 flex flex-row justify-between items-center px-12 pt-8 py-3 font-semibold mb-12)`;
 const Navigation = tw.div`flex space-x-10`;
 const Contacts = tw.div`inline-flex w-max flex-row items-center justify-end space-x-6 px-6 py-2 border border-solid border-accent rounded-full`;
-const Greeting = tw.div`flex flex-[1 1] flex-col pt-12 pb-5 pl-20 md:(pl-4 flex-col text-left max-w-[520px])`;
+const Greeting = tw.div`flex flex-[1 1] flex-col pt-12 pb-5 pl-20 md:(pl-4 flex-col text-left max-w-[520px] animate-slideInRight)`;
 const About = tw.div`w-full flex flex-col relative mt-[0px]`;
 const Portfolio = tw.div`w-full flex flex-col relative`;
 const ContactLink = tw.a`text-accent w-8 h-8`;
@@ -89,11 +89,11 @@ const LandingView = () => {
       </SmScreenView>
 
       <LgScreenView>
-        <Vectors.LandingRoundedBg
+        {/* <Vectors.LandingRoundedBg
           css={tw`min-w-full h-[30vh] z-10 absolute bottom-0`}
-        />
+        /> */}
         <Vectors.LandingWave
-          css={tw`absolute inset-x-0 w-full h-auto bottom-[20vh] opacity-20 z-0`}
+          css={tw`absolute inset-x-0 w-full h-auto bottom-[10vh] opacity-50 z-0`}
         />
       </LgScreenView>
 

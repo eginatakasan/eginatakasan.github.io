@@ -60,6 +60,14 @@ module.exports = {
             transform: 'translateY(8px) rotateX(60deg)',
             opacity: 10,
           }
+        },
+        slideInRight: {
+          '0%': {
+            transform: 'translateX(100vw)',
+          },
+          '100%': {
+            transform: 'translateX(0)',
+          }
         }
       },
       animation: {
@@ -68,6 +76,7 @@ module.exports = {
         screenColorChange: 'screenColorChange 2s linear infinite alternate',
         waves: 'wave 30s ease-in-out infinite alternate',
         gentleWave: 'gentleWave 20s ease-in-out infinite alternate',
+        slideInRight: 'slideInRight 800ms ease-out ',
       },
       fontFamily: {
         nunitoSans: 'Nunito-Sans',

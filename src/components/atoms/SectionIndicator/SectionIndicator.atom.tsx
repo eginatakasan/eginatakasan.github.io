@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import tw, { styled } from 'twin.macro';
+import Icon from '../Icon';
 
 type Props = {
   activeIdx: number;
@@ -7,11 +8,11 @@ type Props = {
 };
 
 const Container = tw.div`fixed top-1/2 left-8 flex-col w-3 h-auto space-y-6 z-50`;
-const Bullet = styled.div(
+const Bullet = styled(Icon.Star)(
   ({ activeIdx, index }: { activeIdx: number; index: number }) => [
-    tw`w-3 h-3 border border-solid bg-gray-300 opacity-60 rotate-45 rounded-[2px]`,
+    tw`w-3 h-3 fill-gray-300 opacity-60`,
     activeIdx === index &&
-      tw`border-accent bg-accent opacity-100 [transform: scale(1.5) rotate(45deg)] [transition-duration: 600ms] transition-transform`,
+      tw`fill-accent opacity-100 [transform: scale(1.8)] [transition-duration: 800ms] transition-transform`,
   ],
 );
 
