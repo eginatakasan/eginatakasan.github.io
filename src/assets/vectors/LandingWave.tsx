@@ -25,7 +25,7 @@ const LandingWave = (props: Props) => (
     <path
       d="M-1.96958 10.3657C95.6915 47.3622 108.848 -18.1383 240.412 10.3661C371.976 38.8706 394.747 10.3663 394.747 10.3663"
       stroke="#E3E3E3"
-      stroke-opacity="0.5"
+      strokeOpacity="0.5"
       css={tw`animate-waves [animation-duration: 8s]`}
     />
   </svg>

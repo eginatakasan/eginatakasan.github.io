@@ -18,7 +18,7 @@ const SectionIndicator = ({ pageCount, activeIdx }: Props) => {
   return (
     <Container>
       {[...Array(pageCount)].map((_, index) => (
-        <Bullet activeIdx={activeIdx} index={index} />
+        <Bullet activeIdx={activeIdx} index={index} key={index} />
       ))}
     </Container>
   );

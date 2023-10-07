@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { UIEventHandler, useCallback, useEffect, useState } from 'react';
 import { AboutMeItem } from 'views/About/About.view';
 import { AcademicCapIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
 import Icon from '../../components/atoms/Icon';
@@ -9,19 +9,24 @@ import AnimationsRoute from '../../pages/Animations/Animations.route';
 const useHomeViewModel = () => {
   const [sectionIdx, setSectionIdx] = useState<number>(0);
 
-  const onScroll = useCallback((e: Event) => {
-    setSectionIdx(window.scrollY % window.screenY);
-    console.log('scroll', window.scrollY % window.screenY);
+  const onScroll: UIEventHandler<HTMLDivElement> = useCallback(e => {
+    setSectionIdx(Math.round(e.target.scrollTop / window.innerHeight));
+    console.log('scroll', e.target.scrollTop);
+    console.log(
+      e.target.scrollTop,
+      window.innerHeight,
+      e.target.scrollTop / window.innerHeight,
+    );
   }, []);
 
-  useEffect(() => {
-    window.addEventListener('scroll', (e: Event) => {
-      console.log('scroll', window.scrollY % window.screenY);
-    });
-    console.log('home');
+  // useEffect(() => {
+  //   window.addEventListener('scroll', (e: Event) => {
+  //     console.log('scroll', window.scrollY % window.screenY);
+  //   });
+  //   console.log('home');
 
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
+  //   return () => window.removeEventListener('scroll', onScroll);
+  // }, []);
 
   const aboutMeItems: AboutMeItem[] = [
     {
@@ -90,7 +95,7 @@ const useHomeViewModel = () => {
     },
   ];
 
-  return { aboutMeItems, playgroundItems, sectionIdx };
+  return { aboutMeItems, playgroundItems, sectionIdx, onScroll };
 };
 
 export default useHomeViewModel;
