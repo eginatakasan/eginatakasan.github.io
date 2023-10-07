@@ -20,7 +20,7 @@ const Greeting = tw.div`flex flex-[1 1] flex-col pt-12 pb-5 pl-20 md:(pl-4 flex-
 const About = tw.div`w-full flex flex-col relative mt-[0px]`;
 const Portfolio = tw.div`w-full flex flex-col relative`;
 const ContactLink = tw.a`text-accent w-8 h-8`;
-const SmScreenView = tw.div`w-full flex flex-col md:(hidden)`;
+const SmScreenView = tw.div`w-full flex-[0.5] flex-col md:(hidden)`;
 const Row = tw.div`flex flex-row`;
 
 const LgScreenView = tw.div`w-full flex-[0.5] hidden flex-col md:(flex) relative`;
@@ -74,9 +74,7 @@ const LandingView = () => {
 
           <div css={tw`flex flex-col items-center mt-8 z-10 md:(mt-4 mb-10)`}>
             <Text.Small css={tw`text-white text-center whitespace-pre`}>
-              Welcome to my Portfolio website!
-              <br />
-              Click below to see my resume
+              Press below to download my resume
             </Text.Small>
             <div css={tw`mt-[32px]`}>
               <a href={url.resume} download="Eginata Kasan - resume">
