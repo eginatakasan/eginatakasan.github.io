@@ -14,6 +14,27 @@ const customStyles: Interpolation<Theme> = [
     body {
       font-family: 'Nunito Sans', sans-serif;
     }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #d9d9d920; 
+      border-radius: 8px;
+    }
+     
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #005f73; 
+      border-radius: 8px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0a9396; 
+    }
   `,
   {
     a: {

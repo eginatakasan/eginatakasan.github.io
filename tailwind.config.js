@@ -98,6 +98,7 @@ module.exports = {
         skyBlue: '#78BAFF',
         textBlack: '#1E1E1E',
         textWhite: '#FFFFFF',
+        frosted: '#d9d9d920',
       },
     },
   },
