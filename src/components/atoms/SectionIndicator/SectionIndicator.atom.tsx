@@ -7,7 +7,7 @@ type Props = {
   pageCount: number;
 };
 
-const Container = tw.div`fixed top-1/2 left-8 flex-col w-3 h-auto space-y-6 z-50`;
+const Container = tw.div`hidden md:(fixed flex top-1/2 left-8 flex-col w-3 h-auto space-y-6 z-50)`;
 const Bullet = styled(Icon.Star)(
   ({ activeIdx, index }: { activeIdx: number; index: number }) => [
     tw`w-3 h-3 fill-gray-300 opacity-60`,

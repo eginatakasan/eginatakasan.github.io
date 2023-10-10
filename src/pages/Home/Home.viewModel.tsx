@@ -11,6 +11,7 @@ import Icon from '../../components/atoms/Icon';
 import tw from 'twin.macro';
 import { PlaygroundItems } from 'views/Playground/Playground.view';
 import AnimationsRoute from '../../pages/Animations/Animations.route';
+import SSTStudioImg from '../../assets/images/sst-studios.png';
 
 const aboutDetails = [
   {
@@ -18,7 +19,7 @@ const aboutDetails = [
     header: 'Bandung Institute of Technology',
     description: (
       <>
-        I have a Bachelor's degree in Informatics / Computer Science
+        Bachelor's degree in Informatics / Computer Science
         <span css={tw`text-accent`}> (2021).</span>
         <br />
         <br />I was head of programming for fire-extinguisher robot team{' '}
@@ -61,16 +62,17 @@ const aboutDetails = [
 
 const projectItems = [
   {
-    title: 'Lawassier.com',
-    link: 'http://lawassier.com',
+    title: 'Qash POS',
+    link: 'qash.id',
   },
   {
-    title: 'Lawassier.com',
-    link: 'http://lawassier.com',
+    title: 'Lawassier.',
+    link: 'lawassier.com',
   },
   {
-    title: 'Lawassier.com',
-    link: 'http://lawassier.com',
+    title: 'SST Studios',
+    linkDesc: 'see design',
+    link: SSTStudioImg,
   },
 ];
 
@@ -80,16 +82,10 @@ const useHomeViewModel = () => {
 
   const onScroll: UIEventHandler<HTMLDivElement> = useCallback(e => {
     setSectionIdx(Math.round(e.target.scrollTop / window.innerHeight));
-    console.log('scroll', e.target.scrollTop);
     setScrollY(e.target.scrollTop);
-    console.log(
-      e.target.scrollTop,
-      window.innerHeight,
-      e.target.scrollTop / window.innerHeight,
-    );
   }, []);
 
-  const [aboutExpandedIdx, setAboutExpandedIdx] = useState<number>(
+  const [aboutExpandedIdx, setAboutExpandedIdx] = useState<number | undefined>(
     aboutDetails.length - 1,
   );
   const aboutMeItems: AboutMeItem[] = useMemo(

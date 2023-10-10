@@ -12,7 +12,7 @@ import Icon from '../../components/atoms/Icon';
 import url from '../../constants/url.constant';
 
 // #region STYLED
-const Container = tw.div`flex flex-col h-screen min-h-[820px] box-border w-full relative overflow-hidden md:(min-h-screen) snap-center`;
+const Container = tw.div`flex flex-col h-screen min-h-[820px] box-border w-full relative overflow-hidden md:(min-h-screen) snap-start`;
 const Greeting = tw.div`flex flex-[1 1] flex-col pt-12 pb-5 pl-20 md:(pl-4 flex-col text-left max-w-[520px] animate-slideInRight)`;
 const Portfolio = tw.div`w-full flex flex-col relative`;
 const SmScreenView = tw.div`w-full flex-[0.5] flex-col md:(hidden)`;
@@ -38,7 +38,10 @@ const LandingView = () => {
       </Row>
 
       <SmScreenView>
-        <Portfolio>
+        <Vectors.LandingWave
+          css={tw`absolute inset-x-0 w-full h-auto bottom-[20vh] z-0`}
+        />
+        {/* <Portfolio>
           <div
             css={tw`absolute bg-primary-dark -top-2 -left-[10%] w-[120%] h-[140px] rounded-b-[50%]`}
           />
@@ -56,7 +59,7 @@ const LandingView = () => {
               </a>
             </div>
           </div>
-        </Portfolio>
+        </Portfolio> */}
       </SmScreenView>
 
       <LgScreenView>

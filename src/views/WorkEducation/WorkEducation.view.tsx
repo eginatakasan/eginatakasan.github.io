@@ -14,10 +14,11 @@ type Props = {
   items: AboutMeItem[];
 };
 
-const Container = tw.div`flex flex-row w-full min-h-screen h-auto md:(justify-between pt-20 pl-20 pr-20 pb-6) lg:(justify-between pt-20 pl-40 pr-40 pb-6) relative snap-end
+const Container = tw.div`flex flex-col w-full min-h-screen px-10 pt-6 md:(flex-row justify-between pt-20 pl-20 pr-20 pb-6) lg:(pt-20 pl-40 pr-40 pb-6) relative snap-start
   [background-image: linear-gradient(0deg, #1E1E1E 39.66%, #111D28 100%)]
 `;
-const LeftColumn = tw.div`flex-1 flex flex-col justify-center text-left md:(text-left justify-center max-w-[460px]) z-10`;
+const Title = tw.h1`text-textWhite mt-5 mb-10 text-[28px] md:(text-[72px]) font-bold`;
+const LeftColumn = tw.div`flex flex-col justify-center text-left md:(flex-1 text-left justify-center max-w-[460px]) z-10`;
 const RightColumn = tw.div`flex-[0.5 0.5] flex flex-col justify-center text-left md:(text-left justify-center max-w-[460px]) z-10`;
 const ListContainer = tw.li`flex flex-col gap-2 mb-4 items-start relative md:(hover:cursor-pointer)`;
 const ListHeadingContainer = tw.div`flex flex-row w-full mb-2 gap-4 justify-start`;
@@ -31,16 +32,14 @@ const Line = styled.div<{ last?: boolean }>(({ last }) => [
   last && tw`border-l-0`,
 ]);
 const ExperienceList = tw.ul`max-w-[460px]`;
-const ListHeading = tw.div`flex-1 mt-1 font-semibold font-nunitoSans text-textWhite`;
-const ListDescription = tw.div`ml-12 mb-6 font-extralight text-textWhite text-justify [line-height: 1.5]`;
+const ListHeading = tw.div`flex-1 mt-1 font-semibold font-nunitoSans text-textWhite md:(text-base)`;
+const ListDescription = tw.div`ml-12 font-extralight text-textWhite text-justify text-sm mb-2 md:(text-base mb-6 [line-height: 1.5])`;
 
 const WorkEducation = ({ items }: Props) => {
   return (
     <Container>
       <LeftColumn>
-        <h1 id="about" tw="text-textWhite mt-5 mb-10 text-[72px] font-bold">
-          Work & Education History
-        </h1>
+        <Title id="about">Work & Education History</Title>
       </LeftColumn>
       <RightColumn>
         <ExperienceList>
@@ -51,6 +50,7 @@ const WorkEducation = ({ items }: Props) => {
                 <ListHeading>{header}</ListHeading>
                 <ChevronDownIcon
                   width={16}
+                  height={32}
                   css={[tw`text-accent`, expanded && tw`rotate-180`]}
                 />
               </ListHeadingContainer>

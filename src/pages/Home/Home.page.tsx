@@ -9,6 +9,7 @@ import texturedBg from './../../assets/images/texture.png';
 import TopNavigation from '../../components/organisms/TopNavigation.organism';
 import WorkEducation from '../../views/WorkEducation/WorkEducation.view';
 import ProjectsView from '../../views/Projects/Projects.view';
+import BottomInformation from '../../components/organisms/BottomInformation.organism';
 
 const HomePage = () => {
   const {
@@ -29,6 +30,7 @@ const HomePage = () => {
       <LandingView />
       <WorkEducationView items={aboutMeItems} />
       <ProjectsView items={projectItems} />
+      <BottomInformation />
       <TopNavigation scrollYPos={scrollY} />
       <SectionIndicator pageCount={3} activeIdx={sectionIdx} />
     </div>
