@@ -1,8 +1,6 @@
 import Vectors from '../../assets/vectors';
 import React from 'react';
 import tw from 'twin.macro';
-import Text from '../../components/atoms/Text/Text.atom';
-import Button from '../../components/atoms/Button/Button.atom';
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import {
   ArrowDownTrayIcon,
@@ -10,6 +8,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Icon from '../../components/atoms/Icon';
 import url from '../../constants/url.constant';
+import { Text } from '../../components/atoms';
 
 // #region STYLED
 const Container = tw.div`flex flex-col h-screen min-h-[820px] box-border w-full relative overflow-hidden md:(min-h-screen) snap-start`;

@@ -14,5 +14,7 @@
     "strings": "on"
   },
   "javascript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.importModuleSpecifier": "relative"
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "eslint.format.enable": true,
+  "eslint.run": "onType"
 }

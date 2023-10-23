@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
-import Button from '../../components/atoms/Button/Button.atom';
-import Text from '../../components/atoms/Text/Text.atom';
+import Button from '../../components/atoms/Button.atom';
+import Text from '../../components/atoms/Text.atom';
 import React from 'react';
 import tw from 'twin.macro';
 

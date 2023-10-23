@@ -3,7 +3,7 @@ import tw, { styled } from 'twin.macro';
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import url from '../../constants/url.constant';
 import Icon from '../atoms/Icon';
-import TextAtom from '../atoms/Text/Text.atom';
+import TextAtom from '../atoms/Text.atom';
 
 // #region STYLED
 const Container = styled.div(() => [

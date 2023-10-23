@@ -4,7 +4,7 @@ import PlaygroundView from '../../views/Playground/Playground.view';
 import WorkEducationView from '../../views/WorkEducation/WorkEducation.view';
 import LandingView from '../../views/Landing/Landing.view';
 import useHomeViewModel from './Home.viewModel';
-import SectionIndicator from '../../components/atoms/SectionIndicator/SectionIndicator.atom';
+import SectionIndicator from '../../components/atoms/SectionIndicator.atom';
 import texturedBg from './../../assets/images/texture.png';
 import TopNavigation from '../../components/organisms/TopNavigation.organism';
 import WorkEducation from '../../views/WorkEducation/WorkEducation.view';
@@ -23,16 +23,15 @@ const HomePage = () => {
 
   return (
     <div
-      css={tw`w-full flex flex-col bg-repeat overflow-auto snap-y snap-mandatory`}
+      css={tw`w-full h-full flex flex-col bg-repeat overflow-auto snap-y snap-mandatory `}
       style={{ backgroundImage: `url(${texturedBg})` }}
       onScroll={onScroll}
     >
       <LandingView />
-      <WorkEducationView items={aboutMeItems} />
       <ProjectsView items={projectItems} />
       <BottomInformation />
       <TopNavigation scrollYPos={scrollY} />
-      <SectionIndicator pageCount={3} activeIdx={sectionIdx} />
+      <SectionIndicator pageCount={2} activeIdx={sectionIdx} />
     </div>
   );
 };

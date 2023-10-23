@@ -41,6 +41,7 @@ module.exports = function webpackConfig(env, { mode }) {
       hot: true,
       open: true,
       static: { directory: path.join(__dirname, 'public') },
+      historyApiFallback: true,
     },
     plugins: [
       new Dotenv({
