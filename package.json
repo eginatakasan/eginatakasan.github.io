@@ -12,6 +12,7 @@
   "scripts": {
     "start": "webpack serve --mode=development",
     "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development",
     "serve": "npx serve public",
     "predeploy": "yarn run build",
     "deploy": "gh-pages -d public -r git@github.com:eginatakasan/eginatakasan.github.io -t true"
