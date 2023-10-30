@@ -13,7 +13,6 @@ import { Text } from '../../components/atoms';
 // #region STYLED
 const Container = tw.div`flex flex-col h-screen min-h-[820px] box-border w-full relative overflow-hidden md:(min-h-screen) snap-start`;
 const Greeting = tw.div`flex flex-[1 1] flex-col pt-12 pb-5 pl-20 md:(pl-4 flex-col text-left max-w-[520px] animate-slideInRight)`;
-const Portfolio = tw.div`w-full flex flex-col relative`;
 const SmScreenView = tw.div`w-full flex-[0.5] flex-col md:(hidden)`;
 const Row = tw.div`flex flex-row`;
 const LgScreenView = tw.div`w-full flex-[0.5] hidden flex-col md:(flex) relative`;
@@ -26,7 +25,7 @@ const LandingView = () => {
         <div tw="hidden md:(flex flex-[0.5])" />
         <Greeting>
           <Text.Small tw="text-white font-light italic">(eggy)</Text.Small>
-          <Text.HeadingOne tw="font-sofiaSans font-normal text-mustard">
+          <Text.HeadingOne tw="font-sofiaSans font-normal text-accent">
             EGINATA KASAN
           </Text.HeadingOne>
           <div tw="mt-8 my-4 w-10 h-1 bg-white" />
@@ -40,25 +39,6 @@ const LandingView = () => {
         <Vectors.LandingWave
           css={tw`absolute inset-x-0 w-full h-auto bottom-[20vh] z-0`}
         />
-        {/* <Portfolio>
-          <div
-            css={tw`absolute bg-primary-dark -top-2 -left-[10%] w-[120%] h-[140px] rounded-b-[50%]`}
-          />
-
-          <div css={tw`flex flex-col items-center mt-8 z-10 md:(mt-4 mb-10)`}>
-            <Text.Small css={tw`text-white text-center whitespace-pre`}>
-              Press below to download my resume
-            </Text.Small>
-            <div css={tw`mt-[32px]`}>
-              <a href={url.resume} download="Eginata Kasan - resume">
-                <Button css={tw`items-center justify-center`}>
-                  <ArrowDownTrayIcon css={tw`inline-block w-4 h-4 mr-2`} />
-                  Download Resume
-                </Button>
-              </a>
-            </div>
-          </div>
-        </Portfolio> */}
       </SmScreenView>
 
       <LgScreenView>

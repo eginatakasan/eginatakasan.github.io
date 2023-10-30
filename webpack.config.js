@@ -26,7 +26,7 @@ module.exports = function webpackConfig(env, { mode }) {
           // See .babelrc for further babel config
         },
         {
-          test: /\.png/,
+          test: /\.png|\.jpg/,
           type: 'asset/resource'
         }
       ],

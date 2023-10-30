@@ -7,13 +7,13 @@ import TextAtom from '../atoms/Text.atom';
 
 // #region STYLED
 const Container = styled.div(() => [
-  tw`flex flex-col h-auto px-10 pt-10 py-16 md:(px-40) w-full bg-textBlack snap-end`,
+  tw`flex flex-col h-auto px-10 pt-10 py-16 md:(px-40) w-full bg-[#ffdab960] backdrop-blur snap-end`,
 ]);
-const Heading = tw(TextAtom.HeadingTwo)`text-primary-light mb-8`;
+const Heading = tw(TextAtom.HeadingTwo)`text-primary-dark mb-8`;
 const Contacts = tw.div`flex flex-col items-start justify-start space-y-4`;
 const SmallText = tw.p`text-sm font-light text-current`;
 const IconContainer = tw.div``;
-const Contact = tw.a`flex-1 pl-4 flex flex-row space-x-4 items-center text-textWhite`;
+const Contact = tw.a`flex-1 pl-4 flex flex-row space-x-4 items-center text-textBlack`;
 // #endregion
 
 const BottomInformation = () => {

@@ -14,7 +14,7 @@ type Props = {
   items: AboutMeItem[];
 };
 
-const Container = tw.div`flex flex-col w-full min-h-screen px-10 pt-6 md:(flex-row justify-between pt-20 pl-20 pr-20 pb-6) lg:(pt-20 pl-40 pr-40 pb-6) relative snap-center
+const Container = tw.div`flex flex-col w-full min-h-screen px-10 pt-6 md:(flex-row justify-between pt-20 pl-20 pr-20 pb-6) lg:(pt-20 pl-40 pr-40 pb-6) relative
   [background-image: linear-gradient(0deg, #1E1E1E 39.66%, #111D28 100%)]
 `;
 const Title = tw.h1`text-textWhite mt-5 mb-10 text-[28px] md:(text-[72px]) font-bold`;
