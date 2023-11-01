@@ -11,11 +11,15 @@ module.exports = {
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react', "@typescript-eslint"],
+  plugins: ['react', '@typescript-eslint/eslint-plugin', "unused-imports"],
   rules: {
     'react/require-default-props': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-unused-vars': 'error',
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ]
   },
   ignorePatterns: [
     'types',

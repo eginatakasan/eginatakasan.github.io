@@ -14,27 +14,6 @@ const customStyles: Interpolation<Theme> = [
     body {
       font-family: 'Nunito Sans', sans-serif;
     }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-    
-    /* Track */
-    ::-webkit-scrollbar-track {
-      background: #d9d9d920; 
-      border-radius: 8px;
-    }
-     
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background: #005f73; 
-      border-radius: 8px;
-    }
-    
-    /* Handle on hover */
-    ::-webkit-scrollbar-thumb:hover {
-      background: #0a9396; 
-    }
   `,
   {
     a: {
@@ -42,6 +21,22 @@ const customStyles: Interpolation<Theme> = [
       ':hover': {
         color: theme`colors.primary.dark`,
       },
+    },
+    div: {
+      margin: 0,
+    },
+    '::-webkit-scrollbar-track': {
+      background: theme`colors.primary.dark`,
+    },
+    '::-webkit-scrollbar': {
+      width: 8,
+    },
+    '::-webkit-scrollbar-thumb': {
+      background: theme`colors.accent.DEFAULT`,
+      borderRadius: 8,
+    },
+    '::-webkit-scrollbar-thumb:hover': {
+      background: theme`colors.accent.DEFAULT`,
     },
   },
 ];

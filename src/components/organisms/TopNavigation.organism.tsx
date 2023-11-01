@@ -14,7 +14,7 @@ type ThemeProps = {
 
 // #region STYLED
 const Container = styled.div(() => [
-  tw`hidden md:(fixed flex h-auto w-full top-0 inset-x-0 z-50)`,
+  tw`hidden md:(fixed flex h-auto top-0 left-0 right-2 z-50)`,
 ]);
 const Content = styled.div(({ transparent }: ThemeProps) => [
   tw`flex-1 flex flex-row justify-between items-center px-12 pt-8 py-3 font-semibold z-50 text-textWhite`,

@@ -1,7 +1,6 @@
 import Text from '../../components/atoms/Text.atom';
 import React from 'react';
 import tw, { styled } from 'twin.macro';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import TextAtom from '../../components/atoms/Text.atom';
 
 export type ProjectsItem = {
@@ -14,9 +13,11 @@ type Props = {
 };
 
 const Container = tw.div`flex flex-col w-full min-h-screen h-auto pt-10 px-10 md:(pt-32 pl-20 pr-20 pb-6) lg:(pt-40 pl-40 pr-40 pb-6) relative snap-center`;
-const Title = tw(TextAtom.HeadingOne)`font-sofiaSans text-secondary`;
-const Grid = tw.div`grid grid-cols-2 w-full mt-4 gap-2 md:(grid-cols-3 gap-6 mt-8) relative`;
-const Project = tw.a`flex flex-col h-[160px] items-center justify-center space-y-5 px-5 py-10 rounded-xl md:(py-10 px-10) text-xl border even:(bg-secondary text-accent bg-opacity-80 border-secondary) odd:(bg-primary-dark text-accent bg-opacity-60 border-primary-dark) hover:opacity-80`;
+const Title = tw(
+  TextAtom.HeadingOne,
+)`font-sofiaSans text-secondary-dark uppercase`;
+const Grid = tw.div`grid grid-cols-1 w-full mt-4 gap-6 md:(grid-cols-3 gap-6 mt-8) relative`;
+const Project = tw.a`flex flex-col h-[120px] items-center justify-center space-y-2 px-5 py-5 rounded-xl md:(h-[160px] py-10 px-10) text-xl border odd:(bg-primary-dark text-accent bg-opacity-80 border-primary-dark) even:(bg-secondary-dark text-accent bg-opacity-60 border-0) hover:opacity-80`;
 const ProjectTitle = tw(Text.Small)`font-semibold text-textWhite`;
 const Link = styled.p(({ hidden }: { hidden?: boolean }) => [
   tw`text-current underline text-sm font-light hover:text-textWhite`,

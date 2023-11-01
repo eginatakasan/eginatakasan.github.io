@@ -1,13 +1,6 @@
-import Vectors from '../../assets/vectors';
 import React from 'react';
 import tw from 'twin.macro';
-import { EnvelopeIcon } from '@heroicons/react/24/solid';
-import {
-  ArrowDownTrayIcon,
-  ChevronDoubleDownIcon,
-} from '@heroicons/react/24/outline';
-import Icon from '../../components/atoms/Icon';
-import url from '../../constants/url.constant';
+import { ChevronDoubleDownIcon } from '@heroicons/react/24/outline';
 import { Text } from '../../components/atoms';
 
 // #region STYLED
@@ -24,28 +17,19 @@ const LandingView = () => {
       <Row tw="flex-1 justify-center items-center md:(items-end)">
         <div tw="hidden md:(flex flex-[0.5])" />
         <Greeting>
-          <Text.Small tw="text-white font-light italic">(eggy)</Text.Small>
           <Text.HeadingOne tw="font-sofiaSans font-normal text-accent">
             EGINATA KASAN
           </Text.HeadingOne>
-          <div tw="mt-8 my-4 w-10 h-1 bg-white" />
+          <Text.Small tw="text-white font-light italic">(eggy)</Text.Small>
           <Text.Title tw="text-white">
             Software Developer & UI/UX Specialist
           </Text.Title>
         </Greeting>
       </Row>
 
-      <SmScreenView>
-        <Vectors.LandingWave
-          css={tw`absolute inset-x-0 w-full h-auto bottom-[20vh] z-0`}
-        />
-      </SmScreenView>
+      <SmScreenView></SmScreenView>
 
-      <LgScreenView>
-        <Vectors.LandingWave
-          css={tw`absolute inset-x-0 w-full h-auto bottom-[10vh] opacity-50 z-0`}
-        />
-      </LgScreenView>
+      <LgScreenView></LgScreenView>
 
       <a
         href="#about"

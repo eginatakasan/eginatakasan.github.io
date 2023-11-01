@@ -85,18 +85,18 @@ module.exports = {
       },
       colors: {
         primary: {
-          light: '#fbc4ab',
-          DEFAULT: '#f8ad9d',
-          dark: '#f08080',
+          light: '#ffd6ff',
+          DEFAULT: '#e7c6ff',
+          dark: '#a48de9',
         },
         accent: {
           DEFAULT: '#fbf8cc',
-          dark: '#fde4cf',
+          dark: '#eead92',
         },
         secondary: {
           light: '#a2d2ff',
-          DEFAULT: '#669bbc',
-          dark: '#457b9d',
+          DEFAULT: '#b8c0ff',
+          dark: '#6e88e7',
         },
         mustard: '#ee9b00',
         teal: '#219EBC',
