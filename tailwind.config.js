@@ -68,6 +68,15 @@ module.exports = {
           '100%': {
             transform: 'translateX(0)',
           }
+        },
+        widen: {
+          'from': { width: '0' },
+          'to': { width: '7ch' },
+        },
+        blinkCaret: {
+          'from': { borderColor: 'transparent' },
+          '50%': { borderColor: 'currentColor' },
+          'to': { borderClor: 'transparent' },
         }
       },
       animation: {
@@ -77,6 +86,7 @@ module.exports = {
         waves: 'wave 30s ease-in-out infinite alternate',
         gentleWave: 'gentleWave 20s ease-in-out infinite alternate',
         slideInRight: 'slideInRight 800ms ease-out ',
+        typing: 'widen 2s steps(15, end), blinkCaret 800ms step-end infinite',
       },
       fontFamily: {
         nunitoSans: 'Nunito-Sans',
