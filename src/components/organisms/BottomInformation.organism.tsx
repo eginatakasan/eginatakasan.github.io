@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import tw, { styled } from 'twin.macro';
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import url from '../../constants/url.constant';
@@ -12,7 +12,7 @@ type Props = {
 // #region STYLED
 const Container = styled.div(({ solid }: { solid?: boolean }) => [
   tw`flex flex-col h-auto px-10 pt-6 pb-10 md:(px-40) w-full bg-frosted backdrop-blur snap-end`,
-  solid && tw`bg-primary-light`,
+  solid && tw`bg-primary`,
 ]);
 const Heading = tw(
   TextAtom.HeadingTwo,

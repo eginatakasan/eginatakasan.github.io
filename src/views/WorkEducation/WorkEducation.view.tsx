@@ -14,12 +14,12 @@ type Props = {
   items: AboutMeItem[];
 };
 
-const Container = tw.div`flex flex-col w-full min-h-screen px-10 pt-6 md:(flex-row justify-between pt-20 pl-20 pr-20 pb-6) lg:(pt-20 pl-40 pr-40 pb-6) relative
-  bg-frosted bg-opacity-60 backdrop-blur
+const Container = tw.div`flex flex-col w-full min-h-screen h-max px-10 pt-6 md:(flex-row pl-20 pr-0) lg:(pl-40 pr-0) relative
+  bg-frosted backdrop-blur
 `;
 const Title = tw.h1`text-textWhite mt-5 mb-10 text-[28px] md:(text-[72px]) font-bold`;
-const LeftColumn = tw.div`flex flex-col justify-center text-left md:(flex-1 text-left justify-center max-w-[460px]) z-10`;
-const RightColumn = tw.div`flex-[0.5 0.5] flex flex-col justify-center text-left md:(text-left justify-center max-w-[460px]) z-10`;
+const LeftColumn = tw.div`flex flex-col justify-center text-left pt-20 pb-6 md:(flex-1 text-left justify-center max-w-[460px]) z-10`;
+const RightColumn = tw.div`flex-[2 2] flex flex-col justify-start text-left md:(text-left justify-center px-20) lg:(pr-40) bg-frosted z-10`;
 const ListContainer = tw.li`flex flex-col gap-2 mb-4 items-start relative md:(hover:cursor-pointer)`;
 const ListHeadingContainer = tw.div`flex flex-row w-full mb-2 gap-4 justify-start`;
 const ListContent = styled.div(({ expanded }: { expanded: boolean }) => [

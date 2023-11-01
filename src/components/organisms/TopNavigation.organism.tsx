@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import tw, { styled } from 'twin.macro';
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import url from '../../constants/url.constant';
@@ -41,8 +41,8 @@ const TopNavigation = ({ scrollYPos = 0, withBackground }: Props) => {
       <Content transparent={transparent}>
         <Navigation>
           <LgNavLink href="/">Home</LgNavLink>
-          <LgNavLink href="about">About</LgNavLink>
-          <LgNavLink href="playground">Playground</LgNavLink>
+          <LgNavLink href="/about">About</LgNavLink>
+          {/* <LgNavLink href="/playground">Playground</LgNavLink> */}
         </Navigation>
 
         <Contacts>
