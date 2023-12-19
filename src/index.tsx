@@ -1,4 +1,3 @@
-import CenteredContent from './components/template/CenteredContent.template';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
@@ -11,8 +10,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <GlobalStyles />
-    <CenteredContent>
-      <RouterProvider router={router} />
-    </CenteredContent>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 );

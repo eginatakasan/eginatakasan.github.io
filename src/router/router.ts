@@ -1,8 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
-import AnimationsRoute from '../pages/Animations/Animations.route'
-import HomeRoute from '../pages/Home/Home.route'
+import ProjectsRoute from '../pages/Projects/Projects.route'
 import AboutRoute from '../pages/About/About.route'
 
-const router = createBrowserRouter([HomeRoute, AboutRoute])
+const router = createBrowserRouter([ProjectsRoute, AboutRoute])
 
 export default router

@@ -1,6 +1,6 @@
 import React from 'react';
 import { css, Global, Interpolation, Theme } from '@emotion/react';
-import tw, { GlobalStyles as BaseStyles, theme } from 'twin.macro';
+import { GlobalStyles as BaseStyles, theme } from 'twin.macro';
 
 const customStyles: Interpolation<Theme> = [
   css`
@@ -14,29 +14,17 @@ const customStyles: Interpolation<Theme> = [
     body {
       font-family: 'Nunito Sans', sans-serif;
     }
+
+    h1, h2, h3, p: {
+      margin: 0,
+    }
   `,
   {
     a: {
       color: theme`colors.textWhite`,
-      ':hover': {
-        color: theme`colors.primary.dark`,
-      },
     },
     div: {
       margin: 0,
-    },
-    '::-webkit-scrollbar-track': {
-      background: theme`colors.primary.dark`,
-    },
-    '::-webkit-scrollbar': {
-      width: 8,
-    },
-    '::-webkit-scrollbar-thumb': {
-      background: theme`colors.accent.DEFAULT`,
-      borderRadius: 8,
-    },
-    '::-webkit-scrollbar-thumb:hover': {
-      background: theme`colors.accent.DEFAULT`,
     },
   },
 ];

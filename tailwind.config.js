@@ -99,6 +99,8 @@ module.exports = {
       fontFamily: {
         nunitoSans: 'Nunito-Sans',
         tokyo: 'Tokyo',
+        cardo: 'Cardo',
+        raleway: 'Raleway',
         sofiaSans: 'Sofia Sans Extra Condensed',
       },
       colors: {
@@ -108,7 +110,8 @@ module.exports = {
           dark: '#a48de9',
         },
         accent: {
-          DEFAULT: '#fbf8cc',
+          light: '#FFE193',
+          DEFAULT: '#ECC35A',
           dark: '#eead92',
         },
         secondary: {
@@ -119,6 +122,8 @@ module.exports = {
         mustard: '#ee9b00',
         teal: '#219EBC',
         skyBlue: '#78BAFF',
+        lightGray: '#9E9E9E',
+        yellow: '#ECC35A',
         textBlack: '#1E1E1E',
         textWhite: '#FFFFFF',
         frosted: '#d9d9d920',

@@ -1,20 +1,19 @@
 import React from 'react';
 import tw from 'twin.macro';
-import WorkEducationView from '../../views/WorkEducation/WorkEducation.view';
-import useAboutViewModel from './About.viewModel';
 import TopNavigation from '../../components/organisms/TopNavigation.organism';
+import BottomContacts from '../../components/organisms/BottomContacts.organism';
 import IntroductionView from '../../views/Introduction/Introduction.view';
-import BottomInformation from '../../components/organisms/BottomInformation.organism';
+import AllAbout from '../../components/organisms/AllAbout.organism';
 
 const AboutPage = () => {
-  const { aboutMeItems } = useAboutViewModel();
-
   return (
-    <div css={tw`w-full h-full flex flex-col bg-cover overflow-auto`}>
-      <TopNavigation withBackground />
-      <IntroductionView />
-      <WorkEducationView items={aboutMeItems} />
-      <BottomInformation solid />
+    <div css={tw`w-full h-full min-h-screen flex flex-col bg-white`}>
+      <TopNavigation />
+      <div tw="flex-1 flex-col">
+        <IntroductionView />
+        <AllAbout />
+      </div>
+      <BottomContacts />
     </div>
   );
 };

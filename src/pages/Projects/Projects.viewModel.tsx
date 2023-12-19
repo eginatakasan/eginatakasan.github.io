@@ -1,6 +1,6 @@
 import { UIEventHandler, useCallback, useState } from 'react';
 import { PlaygroundItems } from 'views/Playground/Playground.view';
-import AnimationsRoute from '../../pages/Animations/Animations.route';
+import AnimationsRoute from '../Animations/Animations.route';
 import SSTStudioImg from '../../assets/images/sst-studios.png';
 
 const projectItems = [
@@ -23,7 +23,7 @@ const projectItems = [
   },
 ];
 
-const useHomeViewModel = () => {
+const useProjectsViewModel = () => {
   const [sectionIdx, setSectionIdx] = useState<number>(0);
   const [scrollY, setScrollY] = useState<number>(0);
 
@@ -51,4 +51,4 @@ const useHomeViewModel = () => {
   };
 };
 
-export default useHomeViewModel;
+export default useProjectsViewModel;
