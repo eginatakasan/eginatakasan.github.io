@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import tw from 'twin.macro';
-import PlaygroundView from '../../views/Playground/Playground.view';
 import WorkEducationView from '../../views/WorkEducation/WorkEducation.view';
 import useAboutViewModel from './About.viewModel';
 import TopNavigation from '../../components/organisms/TopNavigation.organism';

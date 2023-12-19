@@ -1,26 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import tw from 'twin.macro';
-import PlaygroundView from '../../views/Playground/Playground.view';
-import WorkEducationView from '../../views/WorkEducation/WorkEducation.view';
 import LandingView from '../../views/Landing/Landing.view';
 import useHomeViewModel from './Home.viewModel';
 import SectionIndicator from '../../components/atoms/SectionIndicator.atom';
-import texturedBg from './../../assets/images/texture.png';
 import pixelBg from './../../assets/images/pixel-2.png';
 import TopNavigation from '../../components/organisms/TopNavigation.organism';
-import WorkEducation from '../../views/WorkEducation/WorkEducation.view';
 import ProjectsView from '../../views/Projects/Projects.view';
 import BottomInformation from '../../components/organisms/BottomInformation.organism';
 
 const HomePage = () => {
-  const {
-    aboutMeItems,
-    playgroundItems,
-    sectionIdx,
-    onScroll,
-    scrollY,
-    projectItems,
-  } = useHomeViewModel();
+  const { sectionIdx, onScroll, scrollY, projectItems } = useHomeViewModel();
 
   return (
     <div

@@ -73,6 +73,13 @@ module.exports = {
           'from': { width: '0' },
           'to': { width: '7ch' },
         },
+        blink: {
+          '0%': { opacity: 1 },
+          '40%': { opacity: 1 },
+          '50%': { opacity: 0 },
+          '60%': { opacity: 1 },
+          '100%': { opacity: 1 },
+        },
         blinkCaret: {
           'from': { borderColor: 'transparent' },
           '50%': { borderColor: 'currentColor' },
@@ -87,6 +94,7 @@ module.exports = {
         gentleWave: 'gentleWave 20s ease-in-out infinite alternate',
         slideInRight: 'slideInRight 800ms ease-out ',
         typing: 'widen 2s steps(15, end), blinkCaret 800ms step-end infinite',
+        blink: 'blink 4s linear infinite',
       },
       fontFamily: {
         nunitoSans: 'Nunito-Sans',

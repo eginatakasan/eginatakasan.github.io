@@ -1,6 +1,6 @@
 import React from 'react';
 
-type Props = React.HTMLAttributes<SVGSVGElement>;
+type Props = React.SVGProps<SVGSVGElement>;
 
 const Internship = (props: Props) => (
   <svg

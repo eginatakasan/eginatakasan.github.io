@@ -1,7 +1,6 @@
 import React from 'react';
-import tw from 'twin.macro';
 
-type Props = React.HTMLAttributes<SVGSVGElement>;
+type Props = React.SVGProps<SVGSVGElement>;
 
 const Star = (props: Props) => (
   <svg
