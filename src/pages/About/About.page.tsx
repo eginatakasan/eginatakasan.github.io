@@ -1,6 +1,5 @@
 import React from 'react';
 import tw from 'twin.macro';
-import TopNavigation from '../../components/organisms/TopNavigation.organism';
 import BottomContacts from '../../components/organisms/BottomContacts.organism';
 import IntroductionView from '../../views/Introduction/Introduction.view';
 import AllAbout from '../../components/organisms/AllAbout.organism';
@@ -8,7 +7,7 @@ import AllAbout from '../../components/organisms/AllAbout.organism';
 const AboutPage = () => {
   return (
     <div css={tw`w-full h-full min-h-screen flex flex-col bg-white`}>
-      <TopNavigation />
+      {/* <TopNavigation /> */}
       <div tw="flex-1 flex-col">
         <IntroductionView />
         <AllAbout />
