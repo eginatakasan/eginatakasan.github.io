@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 import { Button } from '../../components/atoms';
 
 // #region STYLED
-const Container = tw.div`flex flex-col mt-32 mb-24 mr-4 ml-8 md:(mt-32 px-24 mb-20) lg:(mx-auto max-w-[1280px])`;
+const Container = tw.div`flex flex-col mt-32 mb-24 mr-4 ml-8 md:(mt-32 px-16 mb-20) lg:(mx-auto px-24 max-w-[1280px])`;
 const Content = tw.div`flex flex-col items-start w-full`;
 const Accent = tw.h3`text-xl p-1 font-tokyo text-lightGray`;
 const Heading = tw.h1`text-[5rem] font-cardo font-bold text-textBlack pr-1 border-solid`;

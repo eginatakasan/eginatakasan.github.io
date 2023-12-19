@@ -3,9 +3,9 @@ import tw, { styled } from 'twin.macro';
 
 // #region STYLED
 const Container = styled.div(() => [
-  tw`flex flex-col px-10 py-5 justify-around md:(flex-row px-24) xl:(mx-auto max-w-[1280px]) w-full relative`,
+  tw`flex flex-col px-10 py-5 justify-around md:(flex-row px-16) xl:(mx-auto px-24 max-w-[1280px]) w-full relative`,
 ]);
-const Line = tw.div`absolute inset-x-24 top-0 border-t border-solid border-t-lightGray opacity-60`;
+const Line = tw.div`absolute md:(inset-x-16) xl:(inset-x-24) top-0 border-t border-solid border-t-lightGray opacity-60`;
 const Column = tw.div`flex-[0.3 1 30%] flex flex-col`;
 const Section = tw.div`flex flex-col mb-10`;
 const SectionContent = tw.div`flex flex-col mb-3`;
