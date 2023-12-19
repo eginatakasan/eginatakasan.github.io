@@ -1,6 +1,7 @@
 import React from 'react';
 import tw from 'twin.macro';
 import { Button } from '../../components/atoms';
+import url from '../../constants/url.constant';
 
 // #region STYLED
 const Container = tw.div`flex flex-col mt-32 mb-24 mr-4 ml-8 md:(mt-32 px-16 mb-20) lg:(mx-auto px-24 max-w-[1280px])`;
@@ -26,7 +27,15 @@ const IntroductionView = () => {
           better user experience across products. Adept in Web & Mobile App
           development.
         </Description>
-        <Button tw="mt-16">Check out my Resume</Button>
+        <Button tw="mt-16">
+          <a
+            href={url.resume}
+            target="_blank"
+            download="Eginata Kasan's Resume"
+          >
+            Check out my Resume
+          </a>
+        </Button>
       </Content>
     </Container>
   );

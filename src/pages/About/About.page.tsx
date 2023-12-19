@@ -7,7 +7,6 @@ import AllAbout from '../../components/organisms/AllAbout.organism';
 const AboutPage = () => {
   return (
     <div css={tw`w-full h-full min-h-screen flex flex-col bg-white`}>
-      {/* <TopNavigation /> */}
       <div tw="flex-1 flex-col">
         <IntroductionView />
         <AllAbout />
