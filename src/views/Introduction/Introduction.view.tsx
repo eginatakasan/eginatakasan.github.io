@@ -16,22 +16,22 @@ const IntroductionView = () => {
   return (
     <Container>
       <Content>
-        <Accent>UX Engineer</Accent>
+        <Accent>Software Engineer</Accent>
         <Heading>Eginata Kasan</Heading>
         <Description>
-          A <HighlightText>UX Engineer</HighlightText> currently working for
-          Nomura Research Institute Indonesia.
+          A <HighlightText>Software Engineer</HighlightText> currently pursuing
+          Master's Degree in Information Technology at UTS.
           <br />
           <br />
-          Specializes in building precise UI with detailed micro-interactions to
-          better user experience across products. Adept in Web & Mobile App
-          development.
+          Adept in Web & Mobile App development. My past experience as a UX
+          Engineer means I specialize in building precise UI with detailed
+          micro-interactions to better user experience across products.
         </Description>
         <Button tw="mt-16">
           <a
             href={url.resume}
             target="_blank"
-            download="Eginata Kasan's Resume"
+            download="Eginata Kasan's Resume.pdf"
           >
             Check out my Resume
           </a>
