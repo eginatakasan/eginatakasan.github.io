@@ -1,6 +1,20 @@
 {
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "diffEditor.wordWrap": "inherit",
-  "eslint.packageManager": "yarn",
-  "prettier.configPath": ".prettierrc"
+  "editor.formatOnSave": true,
+  "notebook.formatOnSave.enabled": true,
+  "prettier.configPath": ".prettierrc",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "javascript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "eslint.format.enable": true,
+  "eslint.run": "onType"
 }

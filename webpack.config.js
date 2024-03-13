@@ -25,6 +25,10 @@ module.exports = function webpackConfig(env, { mode }) {
           loader: require.resolve('css-loader'),
           // See .babelrc for further babel config
         },
+        {
+          test: /\.png|\.jpg/,
+          type: 'asset/resource'
+        }
       ],
     },
     optimization: {
@@ -35,8 +39,9 @@ module.exports = function webpackConfig(env, { mode }) {
     },
     devServer: {
       hot: true,
-      open: true,
+      // open: true,
       static: { directory: path.join(__dirname, 'public') },
+      historyApiFallback: { index: '/' },
     },
     plugins: [
       new Dotenv({

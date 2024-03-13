@@ -1,7 +1,6 @@
-import { createHashRouter } from 'react-router-dom'
-import AnimationsRoute from '../pages/Animations/Animations.route'
-import HomeRoute from '../pages/Home/Home.route'
+import { createBrowserRouter } from 'react-router-dom'
+import AboutRoute from '../pages/About/About.route'
 
-const router = createHashRouter([AnimationsRoute, HomeRoute])
+const router = createBrowserRouter([AboutRoute])
 
 export default router

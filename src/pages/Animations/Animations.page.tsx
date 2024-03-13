@@ -10,7 +10,7 @@ const AnimationsPage = () => {
 
   return (
     <div className={`animation-page ${theme}`}>
-      <div className="container">
+      {/* <div className="container">
         <SunFlowers className={`decoration sunflower ${theme}`} />
         <IntoTheNight className={`decoration into-the-night ${theme}`} />
         <div className="bio">
@@ -21,16 +21,8 @@ const AnimationsPage = () => {
           and this is my experiment with SVG animations!
           <br />
         </div>
-
-        <footer>
-          <div className="contacts">
-            <a href="mailto:eginatakasan@gmail.com">
-              <i className="fa-solid fa-envelope" />
-              eginatakasan@gmail.com
-            </a>
-          </div>
-        </footer>
-      </div>
+      </div> */}
+      Animations
     </div>
   )
 }
