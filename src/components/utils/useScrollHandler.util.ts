@@ -4,7 +4,9 @@ export const useScrollHandler = () => {
   const [scrollY, setScrollY] = useState<number>(0);
 
   const onScroll: UIEventHandler<HTMLDivElement> = useCallback(e => {
-    setScrollY(e.target.scrollTop);
+    if ((e.target as HTMLDivElement)?.scrollTop) {
+      setScrollY((e.target as HTMLDivElement)?.scrollTop);
+    }
   }, []);
 
   return {

@@ -1,5 +1,4 @@
 import React from 'react';
-import tw from 'twin.macro';
 
 type Props = React.HTMLAttributes<SVGSVGElement> & {
   circleColor?: string;
@@ -14,8 +13,8 @@ const AboutMeDecor = ({ circleColor, ...props }: Props) => (
     {...props}
     xmlns="http://www.w3.org/2000/svg"
   >
-    <circle cx="73.5" cy="31.5" r="31.5" fill="#0a9396" fill-opacity="0.1" />
-    <circle cx="99.5" cy="118.5" r="31.5" fill="#0a9396" fill-opacity="0.1" />
+    <circle cx="73.5" cy="31.5" r="31.5" fill="#0a9396" fillOpacity="0.1" />
+    <circle cx="99.5" cy="118.5" r="31.5" fill="#0a9396" fillOpacity="0.1" />
     <circle cx="24" cy="87" r="24" fill="#0a9396" />
     <ellipse
       cx="28.5"
@@ -23,7 +22,7 @@ const AboutMeDecor = ({ circleColor, ...props }: Props) => (
       rx="19.5"
       ry="19"
       fill="#0a9396"
-      fill-opacity="0.1"
+      fillOpacity="0.1"
     />
     <ellipse cx="67.5" cy="207" rx="19.5" ry="19" fill="#78BAFF" />
     <ellipse
@@ -32,7 +31,7 @@ const AboutMeDecor = ({ circleColor, ...props }: Props) => (
       rx="13"
       ry="12.5"
       fill="#0a9396"
-      fill-opacity="0.1"
+      fillOpacity="0.1"
     />
     <ellipse
       cx="42"
@@ -40,7 +39,7 @@ const AboutMeDecor = ({ circleColor, ...props }: Props) => (
       rx="13"
       ry="12.5"
       fill="#0a9396"
-      fill-opacity="0.1"
+      fillOpacity="0.1"
     />
     <ellipse
       cx="111"
@@ -48,7 +47,7 @@ const AboutMeDecor = ({ circleColor, ...props }: Props) => (
       rx="24"
       ry="23.5"
       fill="#0a9396"
-      fill-opacity="0.1"
+      fillOpacity="0.1"
     />
     <ellipse
       cx="79"
@@ -56,7 +55,7 @@ const AboutMeDecor = ({ circleColor, ...props }: Props) => (
       rx="24"
       ry="23.5"
       fill="#0a9396"
-      fill-opacity="0.1"
+      fillOpacity="0.1"
     />
   </svg>
 );

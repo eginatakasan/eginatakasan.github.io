@@ -4,7 +4,7 @@
     "target": "ESNext",
     "moduleResolution": "node",
     "jsx": "preserve",
-    "baseUrl": "./src",
+    "baseUrl": "src/",
     "noEmit": true,
     "strict": true,
     "skipLibCheck": true,
@@ -15,7 +15,27 @@
     "noImplicitReturns": true,
     "isolatedModules": true,
     "esModuleInterop": true,
-    "jsxImportSource": "@emotion/react" // Add the css prop
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src", "types"]
+  "include": [
+    "app",
+    "src",
+    "types",
+    ".next/types/**/*.ts",
+    "next.config.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
