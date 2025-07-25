@@ -1,5 +1,5 @@
 import React from 'react';
-import AllAbout from '../src/components/organisms/AllAbout';
+import About from '../src/components/organisms/About';
 import BottomContacts from '../src/components/organisms/BottomContacts';
 import IntroductionView from '../src/components/organisms/Introduction';
 
@@ -8,7 +8,7 @@ const AboutPage = () => {
     <div className="w-full h-full min-h-screen flex flex-col bg-white">
       <div className="flex-1 flex-col">
         <IntroductionView />
-        <AllAbout />
+        <About />
       </div>
       <BottomContacts />
     </div>
