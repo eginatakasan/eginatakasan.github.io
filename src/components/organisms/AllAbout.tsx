@@ -10,12 +10,23 @@ const AllAbout = () => {
             Work Experience
           </h2>
           <div className="flex flex-col mb-3">
-            <h3 className="text-base font-medium font-raleway">UX Engineer</h3>
+            <h3 className="text-base font-medium font-raleway">
+              FullStack Engineer
+            </h3>
             <div className="text-base font-light font-raleway">
-              Nomura Research Institute Indonesia
+              QSStudio, Sydney
             </div>
             <div className="text-base font-light font-raleway italic">
-              since October 2021
+              since May 2024
+            </div>
+          </div>
+          <div className="flex flex-col mb-3">
+            <h3 className="text-base font-medium font-raleway">UX Engineer</h3>
+            <div className="text-base font-light font-raleway">
+              Nomura Research Institute Indonesia, Jakarta
+            </div>
+            <div className="text-base font-light font-raleway italic">
+              October 2021 - January 2024 (&gt;2 years)
             </div>
           </div>
           <div className="flex flex-col mb-3">
@@ -28,6 +39,7 @@ const AllAbout = () => {
             <div className="text-base font-light font-raleway italic">2018</div>
           </div>
         </div>
+
         <div className="flex flex-col mb-10">
           <h2 className="text-xl font-tokyo text-textBlack mb-2">Education</h2>
           <div className="flex flex-col mb-3">
@@ -38,7 +50,8 @@ const AllAbout = () => {
               Master of Information Technology
             </div>
             <div className="text-base font-light font-raleway italic">
-              Commencing February 2024
+              Since February 2024 <br />
+              (Expected Graduation: December 2025)
             </div>
           </div>
           <div className="flex flex-col mb-3">
@@ -58,58 +71,81 @@ const AllAbout = () => {
       <div className="flex-[0.3 1 30%] flex flex-col">
         <div className="flex flex-col mb-10">
           <h2 className="text-xl font-tokyo text-textBlack mb-2">Projects</h2>
-          <div className="flex flex-col mb-3">
-            <h3 className="text-base font-medium font-raleway">
-              Fried Food Management App
-            </h3>
-            <div className="text-base font-light font-raleway">
-              React Native, Typescript, Nativewind, Redux
+          <div className="flex flex-col gap-3 mb-3">
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                AI Powered Beauty Assistant Mobile App
+              </h3>
+              <div className="text-base font-light font-raleway">
+                React Native, AWS CDK, Typescript, Supabase
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col mb-3">
-            <h3 className="text-base font-medium font-raleway">
-              Softphone Feature for VR App
-            </h3>
-            <div className="text-base font-light font-raleway">
-              React, AWS Connect
+
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                Petrol Finder & Price Tracker Mobile App
+              </h3>
+              <div className="text-base font-light font-raleway">
+                React Native, Typescript, Supabase, MongoDB
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col mb-3">
-            <h3 className="text-base font-medium font-raleway">
-              Finance & Investment Website
-            </h3>
-            <div className="text-base font-light font-raleway">Vue.js, CSS</div>
-          </div>
-          <div className="flex flex-col mb-3">
-            <h3 className="text-base font-medium font-raleway">
-              Producer-Consumer-Reseller Livestream Website
-            </h3>
-            <div className="text-base font-light font-raleway">
-              React, Typescript, Tailwind CSS
+
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                Food Stock Management App
+              </h3>
+              <div className="text-base font-light font-raleway">
+                React Native, Typescript, Nativewind, Redux
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col mb-3">
-            <h3 className="text-base font-medium font-raleway">
-              Qash Point-of-Sales System
-            </h3>
-            <div className="text-base font-light font-raleway">
-              React, Typescript, Redux, Sass
+
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                Softphone Feature for VR App
+              </h3>
+              <div className="text-base font-light font-raleway">
+                React, Typescript, AWS Connect
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col mb-3">
-            <h3 className="text-base font-medium font-raleway">
-              Lawassier. Website
-            </h3>
-            <div className="text-base font-light font-raleway">
-              Wordpress development (Local, PHP, JS, HTML/CSS)
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                Finance & Investment Website
+              </h3>
+              <div className="text-base font-light font-raleway">
+                Vue.js, CSS
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col mb-3">
-            <h3 className="text-base font-medium font-raleway">
-              The Dentists Website
-            </h3>
-            <div className="text-base font-light font-raleway">
-              Wordpress development (Local, PHP, JS, HTML/CSS, Tailpress)
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                Producer-Consumer-Reseller Livestream Website
+              </h3>
+              <div className="text-base font-light font-raleway">
+                React, Typescript, Tailwind CSS
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                Qash Point-of-Sales System
+              </h3>
+              <div className="text-base font-light font-raleway">
+                React, Typescript, Redux, Sass
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                Lawassier. Website
+              </h3>
+              <div className="text-base font-light font-raleway">
+                Wordpress development (Local, PHP, JS, HTML/CSS)
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-base font-medium font-raleway">
+                The Dentists Website
+              </h3>
+              <div className="text-base font-light font-raleway">
+                Wordpress development (Local, PHP, JS, HTML/CSS, Tailpress)
+              </div>
             </div>
           </div>
         </div>

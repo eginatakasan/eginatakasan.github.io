@@ -1,7 +1,7 @@
 import React from 'react';
 import AllAbout from '../src/components/organisms/AllAbout';
 import BottomContacts from '../src/components/organisms/BottomContacts';
-import IntroductionView from '../src/views/Introduction/Introduction.view';
+import IntroductionView from '../src/components/organisms/Introduction';
 
 const AboutPage = () => {
   return (
