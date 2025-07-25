@@ -2,6 +2,7 @@ import React from 'react';
 import url from '../../constants/url.constant';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 import { Button } from '../atoms';
+import AnimatedName from './AnimatedName';
 
 const IntroductionView = () => {
   return (
@@ -11,9 +12,7 @@ const IntroductionView = () => {
     >
       <div className="flex flex-col items-start w-full">
         <h2 className="text-xl font-tokyo text-accent">Software Engineer</h2>
-        <h1 className="text-[5rem] font-cardo font-bold text-textBlack pr-1 border-solid">
-          Eginata Kasan
-        </h1>
+        <AnimatedName />
         <div className="block mt-4 p-1 max-w-[560px] text-justify font-medium text-textBlack font-raleway">
           A Software Engineer currently pursuing Master's Degree in Information
           Technology at University of Technology Sydney (Expected Graduation in
