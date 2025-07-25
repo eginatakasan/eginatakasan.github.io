@@ -14,7 +14,7 @@ const IntroductionView = () => {
       <div className="flex flex-col items-start w-full">
         <h2 className="text-xl font-tokyo text-accent">Software Engineer</h2>
         <AnimatedName />
-        <div className="block mt-4 p-1 max-w-[560px] text-justify font-medium text-textBlack font-raleway">
+        <div className="block mt-4 p-1 max-w-[600px] text-justify font-medium text-textBlack font-raleway">
           A Software Engineer currently pursuing Master's Degree in Information
           Technology at University of Technology Sydney (Expected Graduation in
           December 2025).
@@ -30,7 +30,7 @@ const IntroductionView = () => {
           I also go by "Eggy"
         </p>
 
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-row gap-4 max-w-[600px]">
           <a
             href={url.resume}
             target="_blank"
@@ -52,7 +52,7 @@ const IntroductionView = () => {
           >
             <Button variant="outlined" className=" mt-16 font-light">
               <Github className="w-5 h-5" aria-hidden="true" />
-              See Website Code
+              See This Site's Code
             </Button>
           </a>
         </div>
