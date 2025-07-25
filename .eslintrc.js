@@ -25,7 +25,11 @@ module.exports = {
     'types',
     'build',
     '.eslintrc.js',
-    'webpack.config.js',
+    '.next',
+    'node_modules',
+    'public',
+    'next-env.d.ts',
     'tailwind.config.js',
+    'postcss.config.js',
   ],
 }

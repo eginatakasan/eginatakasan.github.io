@@ -1,4 +1,3 @@
-import Button from './Button.atom';
-import Text from './Text.atom';
+import Button from './Button';
 
-export { Button, Text };
+export { Button };
