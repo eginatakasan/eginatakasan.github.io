@@ -30,7 +30,7 @@ const IntroductionView = () => {
           I also go by "Eggy"
         </p>
 
-        <div className="flex flex-row gap-4 max-w-[600px]">
+        <div className="flex flex-col gap-6 md:gap-4 mt-10 md:flex-row md:mt-16 w-full md:w-auto max-w-[600px]">
           <a
             href={url.resume}
             target="_blank"
@@ -38,7 +38,7 @@ const IntroductionView = () => {
             download="Eginata Kasan's Resume.pdf"
             aria-label="Download Eginata Kasan's Resume"
           >
-            <Button className="mt-16 font-light">
+            <Button className="font-light w-full md:w-auto text-center justify-center">
               <ArrowDownTrayIcon className="w-5 h-5" aria-hidden="true" />
               Check out my Resume
             </Button>
@@ -50,7 +50,10 @@ const IntroductionView = () => {
             rel="noopener noreferrer"
             aria-label="See How I Made this Website"
           >
-            <Button variant="outlined" className=" mt-16 font-light">
+            <Button
+              variant="outlined"
+              className="font-light w-full md:w-auto text-center justify-center"
+            >
               <Github className="w-5 h-5" aria-hidden="true" />
               See This Site's Code
             </Button>
