@@ -1,10 +1,12 @@
 import React from 'react';
 import Button from '../atoms/Button';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { technicalSkills } from '../../constants/technologies.constant';
 import projects from '../../constants/projects.constant';
 import workExperience from '../../constants/workExperience.constant';
 import education from '../../constants/education.constant';
 import Link from 'next/link';
+import clsx from 'clsx';
 
 const About = () => {
   return (
@@ -83,11 +85,30 @@ const About = () => {
             Projects &gt;&gt;
           </Link>
           <div className="flex flex-col gap-3 mb-3">
-            {projects.map(project => (
+            {projects.slice(0, 10).map(project => (
               <article key={project.title} className="flex flex-col">
-                <h3 className="text-base font-medium font-raleway">
-                  {project.title}
-                </h3>
+                <div className="">
+                  <a
+                    href={project.liveUrl || project.githubUrl}
+                    target="_blank"
+                    className={clsx(
+                      !project.githubUrl && !project.liveUrl
+                        ? 'contents'
+                        : 'flex flex-row gap-2 items-center text-accent hover:cursor-pointer hover:text-accent-light',
+                    )}
+                    rel="noopener noreferrer"
+                  >
+                    <h3 className="text-base font-medium font-raleway">
+                      {project.title}
+                    </h3>
+                    {project.liveUrl ||
+                      (project.githubUrl && (
+                        <>
+                          <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+                        </>
+                      ))}
+                  </a>
+                </div>
                 <div className="text-base font-light font-raleway">
                   {project.technologies.map((tech, index) => (
                     <React.Fragment key={tech.name}>
@@ -98,6 +119,9 @@ const About = () => {
                 </div>
               </article>
             ))}
+            <p className="text-base font-light font-raleway italic">
+              (And more...)
+            </p>
           </div>
           <Button href="/projects" variant="text">
             See More Details &gt;&gt;

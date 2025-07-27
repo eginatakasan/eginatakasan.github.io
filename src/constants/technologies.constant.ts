@@ -7,16 +7,6 @@ export type Technology = {
 };
 
 const technologies: Record<string, Technology> = {
-  'AWS CDK': {
-    color: '#D05C17',
-    name: 'AWS CDK',
-    tags: [tags['Backend']],
-  },
-  'AWS Connect': {
-    color: '#D05C17',
-    name: 'AWS Connect',
-    tags: [tags['Web']],
-  },
   'C#': {
     color: '#9b4f96',
     name: 'C#',
@@ -50,17 +40,27 @@ const technologies: Record<string, Technology> = {
   Nativewind: {
     color: '#0891B2',
     name: 'Nativewind',
-    tags: [tags['Frontend'], tags['Mobile']],
+    tags: [tags['Mobile']],
   },
   'Next.js': {
     color: '#000000',
     name: 'Next.js',
     tags: [tags['Frontend'], tags['Web']],
   },
+  'Node.js': {
+    color: '#339933',
+    name: 'Node.js',
+    tags: [tags['Backend']],
+  },
   PHP: {
     color: '#4A148C',
     name: 'PHP',
     tags: [tags['Backend'], tags['Web']],
+  },
+  PostgreSQL: {
+    color: '#3178c6',
+    name: 'PostgreSQL',
+    tags: [tags['Backend']],
   },
   React: {
     color: '#58c4dc',
@@ -82,11 +82,6 @@ const technologies: Record<string, Technology> = {
     name: 'Sass',
     tags: [tags['Frontend'], tags['Web']],
   },
-  Storybook: {
-    color: '#FF4785',
-    name: 'Storybook',
-    tags: [tags['Frontend']],
-  },
   Supabase: {
     color: '#1F8F4E',
     name: 'Supabase',
@@ -95,12 +90,7 @@ const technologies: Record<string, Technology> = {
   Swift: {
     color: '#FFAC45',
     name: 'Swift',
-    tags: [tags['Mobile'], tags['Frontend']],
-  },
-  Tailpress: {
-    color: '#0891B2',
-    name: 'Tailpress',
-    tags: [tags['Frontend'], tags['Web']],
+    tags: [tags['Mobile']],
   },
   'Tailwind CSS': {
     color: '#0891B2',
@@ -139,7 +129,13 @@ const technicalSkills = [
   {
     category: 'Web Development',
     skills: Object.values(technologies)
-      .filter(tech => tech.tags.some(tag => tag.name === 'Web development'))
+      .filter(tech =>
+        tech.tags.some(
+          tag =>
+            tag.name === 'Web development' ||
+            tag.name === 'Backend development',
+        ),
+      )
       .map(tech => tech.name),
   },
   {

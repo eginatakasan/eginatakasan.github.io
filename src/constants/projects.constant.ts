@@ -64,7 +64,7 @@ const projects: Project[] = [
   {
     description:
       'A library of reusable and flexible UI components that is used in company framework to improve consistency and efficiency',
-    technologies: [tech['React'], tech['Typescript'], tech['Storybook']],
+    technologies: [tech['React'], tech['Typescript']],
     title: 'Company UI Library via Storybook',
   },
   {
@@ -76,7 +76,7 @@ const projects: Project[] = [
   {
     description:
       'Softphone feature integrated into VR application for communication',
-    technologies: [tech['React'], tech['Typescript'], tech['AWS Connect']],
+    technologies: [tech['React'], tech['Typescript']],
     title: 'Softphone Feature for VR App',
   },
   {
@@ -132,7 +132,6 @@ const projects: Project[] = [
       tech['PHP'],
       tech['JavaScript'],
       tech['HTML/CSS'],
-      tech['Tailpress'],
     ],
     title: 'The Dentists Website',
   },
