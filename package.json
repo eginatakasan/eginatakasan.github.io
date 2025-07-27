@@ -11,7 +11,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "node generateSitemap.js && next build",
+    "build": "node generateBuildInfo.js && node generateSitemap.js && next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "gh-pages -d out -r git@github.com:eginatakasan/eginatakasan.github.io -t true",

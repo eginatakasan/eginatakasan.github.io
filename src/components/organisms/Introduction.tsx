@@ -8,7 +8,7 @@ import Github from '../atoms/Icon/Github.icon';
 const IntroductionView = () => {
   return (
     <section
-      className="flex flex-col mt-32 mb-24 px-8 mr-8 md:mt-32 md:px-16 md:mx-auto md:mb-20 xl:px-24 xl:max-w-[1280px]"
+      className="flex flex-col mt-32 mb-24 px-8 mr-8 md:mt-32 md:px-16 md:mx-auto md:mb-20  xl:max-w-[1280px]"
       aria-label="Introduction"
     >
       <div className="flex flex-col items-start w-full">

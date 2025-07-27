@@ -21,7 +21,7 @@ const AnimatedName = () => {
         y: 0,
         opacity: 1,
         rotation: 0,
-        duration: 0.7,
+        duration: 0.3,
         ease: 'back',
         stagger: 0.15,
       },

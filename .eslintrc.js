@@ -4,19 +4,24 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "next/core-web-vitals",
     "prettier"
   ],
-  overrides: [],
+  overrides: [
+    {
+      files: ["src/constants/**/*.ts"],
+      rules: {
+        "sort-keys": ["error", "asc", { "caseSensitive": true, "natural": true }]
+      }
+    }
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: './tsconfig.json',
   },
-  plugins: ['react', '@typescript-eslint/eslint-plugin', "unused-imports"],
+  plugins: ['@typescript-eslint/eslint-plugin', "unused-imports"],
   rules: {
-    'react/require-default-props': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     "unused-imports/no-unused-imports": "error",
     "unused-imports/no-unused-vars": [

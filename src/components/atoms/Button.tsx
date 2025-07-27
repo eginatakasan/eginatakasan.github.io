@@ -21,14 +21,14 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const baseClasses =
-    'flex flex-row font-raleway items-center gap-3 text-sm md:text-base font-semibold rounded-full transition-all [transition-duration: 300ms]';
+    'flex flex-row font-raleway items-center gap-3 text-sm md:text-base font-semibold rounded-full transition-all duration-200';
 
   const variantClasses = {
     filled:
       'py-3 px-8 md:px-11 min-h-14 bg-accent shadow-md hover:bg-accent-light hover:scale-105 text-textWhite',
     outlined:
-      'py-3 px-8 md:px-11 min-h-14 bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white hover:scale-105 hover:border-accent-light hover:border-2',
-    text: 'px-0.5 py-0.5 bg-transparent text-accent font-bold hover:text-accent-light hover:scale-105',
+      'py-3 px-8 md:px-11 min-h-14 bg-white border-2 border-gray-500 text-gray-600 hover:scale-105 hover:border-accent hover:text-accent',
+    text: 'px-0.5 py-0.5 bg-transparent text-accent font-bold hover:text-accent-light hover:underline',
   };
 
   if (href) {
