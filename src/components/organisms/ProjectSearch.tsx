@@ -16,22 +16,22 @@ const ProjectSearch = () => {
   );
 
   // Extract unique technologies from all projects
-  const allTechnologies = useMemo(() => {
-    const techSet = new Set<string>();
-    projects.forEach(project => {
-      project.technologies.forEach(tech => {
-        techSet.add(tech.name);
-      });
-    });
-    return Array.from(techSet).sort();
-  }, []);
+  // const allTechnologies = useMemo(() => {
+  //   const techSet = new Set<string>();
+  //   projects.forEach(project => {
+  //     project.technologies.forEach(tech => {
+  //       techSet.add(tech.name);
+  //     });
+  //   });
+  //   return Array.from(techSet).sort();
+  // }, []);
 
-  // Get technology object by name
-  const getTechnologyByName = (name: string) => {
-    return projects
-      .flatMap(project => project.technologies)
-      .find(tech => tech.name === name);
-  };
+  // // Get technology object by name
+  // const getTechnologyByName = (name: string) => {
+  //   return projects
+  //     .flatMap(project => project.technologies)
+  //     .find(tech => tech.name === name);
+  // };
 
   // Filter projects by search text, selected tags, and selected technologies
   const filteredProjects = useMemo(() => {
@@ -88,15 +88,15 @@ const ProjectSearch = () => {
     setSelectedTags(newSelectedTags);
   };
 
-  const toggleTechnology = (techName: string) => {
-    const newSelectedTechnologies = new Set(selectedTechnologies);
-    if (newSelectedTechnologies.has(techName)) {
-      newSelectedTechnologies.delete(techName);
-    } else {
-      newSelectedTechnologies.add(techName);
-    }
-    setSelectedTechnologies(newSelectedTechnologies);
-  };
+  // const toggleTechnology = (techName: string) => {
+  //   const newSelectedTechnologies = new Set(selectedTechnologies);
+  //   if (newSelectedTechnologies.has(techName)) {
+  //     newSelectedTechnologies.delete(techName);
+  //   } else {
+  //     newSelectedTechnologies.add(techName);
+  //   }
+  //   setSelectedTechnologies(newSelectedTechnologies);
+  // };
 
   const clearAllFilters = () => {
     setSelectedTags(new Set());
@@ -107,9 +107,9 @@ const ProjectSearch = () => {
     setSelectedTags(new Set());
   };
 
-  const clearAllTechnologies = () => {
-    setSelectedTechnologies(new Set());
-  };
+  // const clearAllTechnologies = () => {
+  //   setSelectedTechnologies(new Set());
+  // };
 
   return (
     <section className="mt-10">
