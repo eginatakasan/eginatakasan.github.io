@@ -6,7 +6,7 @@ import { getFormattedBuildDate } from '../../constants/buildInfo.constant';
 
 const BottomContacts = () => {
   return (
-    <footer className="flex flex-col px-8 md:px-16 xl:px-24 py-6 w-full xl:max-w-[1280px] mx-auto">
+    <footer className="flex flex-col px-8 md:px-16 py-6 w-full xl:max-w-[1280px] mx-auto">
       <div className="flex-1 border-t border-t-black border-solid" />
       <div className="flex flex-row justify-between items-center">
         <div className="flex flex-row space-x-4">

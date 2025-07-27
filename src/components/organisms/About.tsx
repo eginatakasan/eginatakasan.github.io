@@ -9,10 +9,10 @@ import Link from 'next/link';
 const About = () => {
   return (
     <section
-      className="flex flex-col px-10 pt-10 pb-5 justify-start md:flex-wrap md:flex-row md:py-5 md:px-16 xl:mx-auto xl:px-24 xl:max-w-[1280px] gap-6 w-full relative"
+      className="flex flex-col px-10 pt-10 pb-5 justify-start md:flex-wrap md:flex-row md:py-5 md:px-16 xl:mx-auto xl:max-w-[1280px] gap-6 w-full relative"
       aria-label="Eginata Kasan's Work Experience, Education, and Projects"
     >
-      <div className="absolute inset-x-16 xl:inset-x-24 top-0 border-t border-solid border-t-lightGray opacity-60"></div>
+      <div className="absolute inset-x-16 top-0 border-t border-solid border-t-lightGray opacity-60"></div>
 
       <div className="flex-[0.3 1 40%] lg:flex-[0.3 1 30%] flex flex-col">
         <section

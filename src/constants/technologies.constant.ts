@@ -20,7 +20,12 @@ const technologies: Record<string, Technology> = {
   'C#': {
     color: '#9b4f96',
     name: 'C#',
-    tags: [tags['Mobile'], tags['Language']],
+    tags: [tags['Mobile']],
+  },
+  EmotionCSS: {
+    color: '#0891B2',
+    name: 'EmotionCSS',
+    tags: [tags['Frontend']],
   },
   'HTML/CSS': {
     color: '#C62828',
@@ -30,12 +35,12 @@ const technologies: Record<string, Technology> = {
   Java: {
     color: '#007396',
     name: 'Java',
-    tags: [tags['Backend'], tags['Language']],
+    tags: [tags['Backend']],
   },
   JavaScript: {
     color: '#B8860B',
     name: 'JavaScript',
-    tags: [tags['Frontend'], tags['Backend'], tags['Web'], tags['Language']],
+    tags: [tags['Frontend'], tags['Backend'], tags['Web']],
   },
   MongoDB: {
     color: '#00684A',
@@ -47,10 +52,15 @@ const technologies: Record<string, Technology> = {
     name: 'Nativewind',
     tags: [tags['Frontend'], tags['Mobile']],
   },
+  'Next.js': {
+    color: '#000000',
+    name: 'Next.js',
+    tags: [tags['Frontend'], tags['Web']],
+  },
   PHP: {
     color: '#4A148C',
     name: 'PHP',
-    tags: [tags['Backend'], tags['Web'], tags['Language']],
+    tags: [tags['Backend'], tags['Web']],
   },
   React: {
     color: '#58c4dc',
@@ -72,10 +82,20 @@ const technologies: Record<string, Technology> = {
     name: 'Sass',
     tags: [tags['Frontend'], tags['Web']],
   },
+  Storybook: {
+    color: '#FF4785',
+    name: 'Storybook',
+    tags: [tags['Frontend']],
+  },
   Supabase: {
     color: '#1F8F4E',
     name: 'Supabase',
     tags: [tags['Backend']],
+  },
+  Swift: {
+    color: '#FFAC45',
+    name: 'Swift',
+    tags: [tags['Mobile'], tags['Frontend']],
   },
   Tailpress: {
     color: '#0891B2',
@@ -87,10 +107,20 @@ const technologies: Record<string, Technology> = {
     name: 'Tailwind CSS',
     tags: [tags['Frontend'], tags['Web']],
   },
+  'Three.js': {
+    color: '#000000',
+    name: 'Three.js',
+    tags: [tags['Frontend']],
+  },
   Typescript: {
     color: '#3178c6',
     name: 'Typescript',
     tags: [tags['Frontend']],
+  },
+  Vite: {
+    color: '#0891B2',
+    name: 'Vite.js',
+    tags: [tags['Frontend'], tags['Web']],
   },
   'Vue.js': {
     color: '#2E7D32',
