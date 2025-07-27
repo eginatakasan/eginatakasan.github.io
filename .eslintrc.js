@@ -3,7 +3,10 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["prettier"],
+  extends: [
+    "next/core-web-vitals",
+    "prettier"
+  ],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -31,5 +34,6 @@ module.exports = {
     'next-env.d.ts',
     'tailwind.config.js',
     'postcss.config.js',
+    'out',
   ],
 }

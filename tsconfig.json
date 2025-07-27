@@ -33,8 +33,7 @@
     "src",
     "types",
     ".next/types/**/*.ts",
-    "next.config.js"
-  ],
+    "next.config.js"],
   "exclude": [
     "node_modules"
   ]
