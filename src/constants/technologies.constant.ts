@@ -12,6 +12,11 @@ const technologies: Record<string, Technology> = {
     name: 'C#',
     tags: [tags['Mobile']],
   },
+  Cypress: {
+    color: '#17202A',
+    name: 'Cypress',
+    tags: [tags['Testing']],
+  },
   EmotionCSS: {
     color: '#0891B2',
     name: 'EmotionCSS',
@@ -31,6 +36,11 @@ const technologies: Record<string, Technology> = {
     color: '#B8860B',
     name: 'JavaScript',
     tags: [tags['Frontend'], tags['Backend'], tags['Web']],
+  },
+  Jest: {
+    color: '#C62828',
+    name: 'Jest',
+    tags: [tags['Testing']],
   },
   MongoDB: {
     color: '#00684A',

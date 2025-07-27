@@ -58,6 +58,7 @@ const projects: Project[] = [
       tech['Typescript'],
       tech['Nativewind'],
       tech['Redux'],
+      tech['Jest'],
     ],
     title: 'Food Stock Management App',
   },
@@ -70,7 +71,7 @@ const projects: Project[] = [
   {
     description:
       'Document storage system (similar to Google Drive) made with React.js and HTML/CSS',
-    technologies: [tech['React'], tech['HTML/CSS']],
+    technologies: [tech['React'], tech['HTML/CSS'], tech['Cypress']],
     title: 'Document Management System',
   },
   {
