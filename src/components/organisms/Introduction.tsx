@@ -31,33 +31,29 @@ const IntroductionView = () => {
         </p>
 
         <div className="flex flex-col gap-6 md:gap-4 mt-10 md:flex-row md:mt-16 w-full md:w-auto max-w-[600px]">
-          <a
+          <Button
             href={url.resume}
             target="_blank"
             rel="noopener noreferrer"
             download="Eginata Kasan's Resume.pdf"
             aria-label="Download Eginata Kasan's Resume"
+            className="font-light w-full md:w-auto text-center justify-center"
           >
-            <Button className="font-light w-full md:w-auto text-center justify-center">
-              <ArrowDownTrayIcon className="w-5 h-5" aria-hidden="true" />
-              Check out my Resume
-            </Button>
-          </a>
+            <ArrowDownTrayIcon className="w-5 h-5" aria-hidden="true" />
+            Check out my Resume
+          </Button>
 
-          <a
+          <Button
             href={url.githubIoRepo}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="See How I Made this Website"
+            variant="outlined"
+            className="font-light w-full md:w-auto text-center justify-center"
           >
-            <Button
-              variant="outlined"
-              className="font-light w-full md:w-auto text-center justify-center"
-            >
-              <Github className="w-5 h-5" aria-hidden="true" />
-              See This Site's Code
-            </Button>
-          </a>
+            <Github className="w-5 h-5" aria-hidden="true" />
+            See This Site's Code
+          </Button>
         </div>
       </div>
     </section>

@@ -119,7 +119,7 @@ module.exports = {
         accent: {
           light: '#FFE193',
           DEFAULT: '#ECC35A',
-          dark: '#eead92',
+          dark: '#c79b2c',
         },
         secondary: {
           light: '#a2d2ff',

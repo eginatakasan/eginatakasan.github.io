@@ -1,4 +1,4 @@
-const RESUME_URL = `${process.env.REACT_APP_BASE_URL}/resume.pdf`
+const RESUME_URL = `${process.env.NEXT_PUBLIC_BASE_URL}resume.pdf`
 
 const MAIL_URL = 'mailto:eginatakasan@gmail.com'
 const LINKEDIN_URL = 'https://www.linkedin.com/in/eginata-kasan/'

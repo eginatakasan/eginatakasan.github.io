@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 type Props = {
@@ -6,28 +7,28 @@ type Props = {
 
 const TopNavigation = ({ mode }: Props) => {
   return (
-    <div className="fixed flex h-auto top-0 left-0 right-2 z-50">
+    <nav className="w-full h-auto right-0 top-0 z-50">
       <div
-        className={`flex-1 flex flex-row justify-between items-center px-8 md:px-12 pt-8 py-6 z-50 text-accent border-0 bg-white bg-opacity-80 backdrop-blur-sm ${
+        className={`flex flex-row justify-between items-center px-10 md:px-24 py-4 z-50 text-accent border-0 border-b border-b-white bg-white bg-opacity-20 rounded-bl-3xl backdrop-blur-md ${
           mode ? 'border-b border-b-textBlack' : ''
         }`}
       >
-        <div className="flex space-x-10 items-center">
-          <a
-            className="hover:text-accent-light flex flex-row gap-4 items-center [font-size: 18px] text-current font-tokyo transition-colors"
+        <div className="flex-1 flex flex-row justify-end space-x-10 items-center self-end">
+          <Link
+            className="hover:text-accent-light flex flex-row gap-4 items-center text-lg text-current font-tokyo transition-colors"
             href="/"
           >
-            Projects
-          </a>
-          <a
-            className="hover:text-accent-light flex flex-row gap-4 items-center [font-size: 18px] text-current font-tokyo transition-colors"
-            href="/about"
-          >
             About
-          </a>
+          </Link>
+          <Link
+            className="hover:text-accent-light flex flex-row gap-4 items-center text-lg text-current font-tokyo transition-colors"
+            href="/projects"
+          >
+            Projects
+          </Link>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
