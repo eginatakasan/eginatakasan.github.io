@@ -5,10 +5,7 @@ import Icon from '../atoms/Icon';
 
 const BottomContacts = () => {
   return (
-    <footer
-      className="flex flex-row justify-between px-10 py-6 space-x-4 md:space-x-6 md:px-24 w-full border-t border-solid border-t-textBlack"
-      role="contentinfo"
-    >
+    <footer className="flex flex-row justify-between px-10 py-6 space-x-4 md:space-x-6 md:px-24 xl:px-40 w-full border-t border-solid border-t-textBlack">
       <div className="flex flex-row space-x-4"></div>
       <div className="flex flex-row space-x-4">
         <a
