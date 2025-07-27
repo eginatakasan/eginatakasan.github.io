@@ -156,7 +156,7 @@ const ProjectSearch = () => {
       </div>
 
       {/* Technology Filter Section */}
-      <div className="mb-8">
+      {/* <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
           <h3 className="text-md font-semibold text-textBlack">
             Filter by Technologies
@@ -196,7 +196,7 @@ const ProjectSearch = () => {
             );
           })}
         </div>
-      </div>
+      </div> */}
 
       {/* Results Count */}
       <div className="mb-6">
