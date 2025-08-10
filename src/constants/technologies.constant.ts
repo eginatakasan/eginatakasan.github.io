@@ -142,8 +142,8 @@ const technicalSkills = [
       .filter(tech =>
         tech.tags.some(
           tag =>
-            tag.name === 'Web development' ||
-            tag.name === 'Backend development',
+            tag?.name === 'Web development' ||
+            tag?.name === 'Backend development',
         ),
       )
       .map(tech => tech.name),
@@ -151,7 +151,7 @@ const technicalSkills = [
   {
     category: 'Mobile/App Development',
     skills: Object.values(technologies)
-      .filter(tech => tech.tags.some(tag => tag.name === 'Mobile development'))
+      .filter(tech => tech.tags.some(tag => tag?.name === 'Mobile development'))
       .map(tech => tech.name),
   },
 ];

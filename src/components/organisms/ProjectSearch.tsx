@@ -44,8 +44,8 @@ const ProjectSearch = () => {
       // Tag filter
       const projectTags = new Set<string>();
       project.technologies.forEach(tech => {
-        tech.tags.forEach(tag => {
-          projectTags.add(tag.name);
+        tech.tags?.forEach(tag => {
+          projectTags.add(tag?.name);
         });
       });
 
@@ -80,10 +80,10 @@ const ProjectSearch = () => {
 
   const toggleTag = (tag: TechnologyTag) => {
     const newSelectedTags = new Set(selectedTags);
-    if (newSelectedTags.has(tag.name)) {
-      newSelectedTags.delete(tag.name);
+    if (newSelectedTags.has(tag?.name)) {
+      newSelectedTags.delete(tag?.name);
     } else {
-      newSelectedTags.add(tag.name);
+      newSelectedTags.add(tag?.name);
     }
     setSelectedTags(newSelectedTags);
   };
@@ -139,17 +139,17 @@ const ProjectSearch = () => {
         <div className="flex flex-wrap gap-2">
           {allTags.map(tag => (
             <button
-              key={tag.name}
+              key={tag?.name}
               onClick={() => toggleTag(tag)}
               className={clsx(
                 'flex flex-row gap-2 items-center px-3 py-2 text-sm rounded-full font-medium font-raleway transition-all duration-200',
                 'border-2',
-                selectedTags.has(tag.name)
+                selectedTags.has(tag?.name)
                   ? 'bg-accent text-white border-accent'
                   : 'bg-white text-gray-600 border-gray-200 hover:border-accent hover:text-accent',
               )}
             >
-              {tag.icon} {tag.name}
+              {tag?.icon} {tag?.name}
             </button>
           ))}
         </div>
@@ -230,7 +230,7 @@ const ProjectSearch = () => {
                   key={index}
                   className="px-2 py-1 text-xs rounded-full font-medium font-raleway bg-gray-100 text-gray-700"
                 >
-                  {tag.icon}
+                  {tag?.icon}
                 </span>
               ))}
             </div>
