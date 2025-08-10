@@ -18,9 +18,9 @@ const ProjectsPage = () => {
             My Projects
           </h1>
           <div className="block mt-4 p-1 max-w-[600px] text-justify font-medium text-textBlack font-raleway">
-            Here are some of the projects I've worked on as a software engineer.
-            I might have more that I haven't listed here since I'm always
-            working on something new! <br />
+            Hi, I'm Eginata Kasan! Here are some of the projects I've worked on
+            as a software engineer. I might have more that I haven't listed here
+            since I'm always working on something new! <br />
             <br />
             Feel free to contact me if you're interested in any of my projects.
           </div>
