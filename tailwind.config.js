@@ -2,9 +2,6 @@
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
- 
-    // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -119,7 +116,7 @@ module.exports = {
         accent: {
           light: '#FFE193',
           DEFAULT: '#ECC35A',
-          dark: '#eead92',
+          dark: '#c79b2c',
         },
         secondary: {
           light: '#a2d2ff',

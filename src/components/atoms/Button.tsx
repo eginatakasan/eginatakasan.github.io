@@ -1,25 +1,53 @@
 import clsx from 'clsx';
 import React from 'react';
+import Link from 'next/link';
 
 type ButtonProps = {
   children: React.ReactNode;
   className?: string;
-  variant?: 'filled' | 'outlined';
+  variant?: 'filled' | 'outlined' | 'text';
+  href?: string;
+  target?: string;
+  rel?: string;
+  download?: string;
+  'aria-label'?: string;
 };
 
-const Button = ({ children, className, variant = 'filled' }: ButtonProps) => {
+const Button = ({
+  children,
+  className,
+  variant = 'filled',
+  href,
+  ...props
+}: ButtonProps) => {
   const baseClasses =
-    'flex flex-row font-raleway items-center gap-3 py-3 px-8 md:px-11 min-h-14 text-sm md:text-base font-semibold rounded-full transition-all [transition-duration: 300ms]';
+    'flex flex-row font-raleway items-center gap-3 text-sm md:text-base font-semibold rounded-full transition-all duration-200';
 
   const variantClasses = {
     filled:
-      'bg-accent shadow-md hover:bg-accent-light hover:scale-105 text-textWhite',
+      'py-3 px-8 md:px-11 min-h-14 bg-accent shadow-md hover:bg-accent-light hover:scale-105 text-textWhite',
     outlined:
-      'bg-white border-2 border-accent text-accent hover:bg-accent hover:text-white hover:scale-105',
+      'py-3 px-8 md:px-11 min-h-14 bg-white border-2 border-gray-500 text-gray-600 hover:scale-105 hover:border-accent hover:text-accent',
+    text: 'px-0.5 py-0.5 bg-transparent text-accent font-bold hover:text-accent-light hover:underline',
   };
 
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={clsx(baseClasses, variantClasses[variant], className)}
+        {...props}
+      >
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <button className={clsx(baseClasses, variantClasses[variant], className)}>
+    <button
+      className={clsx(baseClasses, variantClasses[variant], className)}
+      {...props}
+    >
       {children}
     </button>
   );

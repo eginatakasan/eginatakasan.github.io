@@ -10,6 +10,7 @@
 
 # production
 /build
+/out
 
 # misc
 .DS_Store
@@ -19,8 +20,12 @@
 .env.production
 .env.test
 
-.next/
+# next.js
+/.next/
 public
+
+# build artifacts
+src/constants/buildInfo.json
 
 npm-debug.log*
 yarn-debug.log*

@@ -8,7 +8,7 @@ import Github from '../atoms/Icon/Github.icon';
 const IntroductionView = () => {
   return (
     <section
-      className="flex flex-col mt-32 mb-24 px-8 mr-8 md:mt-32 md:px-16 md:mx-auto md:mb-20 xl:px-24 xl:max-w-[1280px]"
+      className="flex flex-col mt-32 mb-24 px-8 mr-8 md:mt-32 md:px-16 md:mx-auto md:mb-20 xl:max-w-[1280px]"
       aria-label="Introduction"
     >
       <div className="flex flex-col items-start w-full">
@@ -30,31 +30,30 @@ const IntroductionView = () => {
           I also go by "Eggy"
         </p>
 
-        <div className="flex flex-row gap-4 max-w-[600px]">
-          <a
+        <div className="flex flex-col gap-6 md:gap-4 mt-10 md:flex-row md:mt-16 w-full md:w-auto max-w-[600px]">
+          <Button
             href={url.resume}
             target="_blank"
             rel="noopener noreferrer"
             download="Eginata Kasan's Resume.pdf"
             aria-label="Download Eginata Kasan's Resume"
+            className="font-light w-full md:w-auto text-center justify-center"
           >
-            <Button className="mt-16 font-light">
-              <ArrowDownTrayIcon className="w-5 h-5" aria-hidden="true" />
-              Check out my Resume
-            </Button>
-          </a>
+            <ArrowDownTrayIcon className="w-5 h-5" aria-hidden="true" />
+            Check out my Resume
+          </Button>
 
-          <a
+          <Button
             href={url.githubIoRepo}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="See How I Made this Website"
+            variant="outlined"
+            className="font-light w-full md:w-auto text-center justify-center"
           >
-            <Button variant="outlined" className=" mt-16 font-light">
-              <Github className="w-5 h-5" aria-hidden="true" />
-              See This Site's Code
-            </Button>
-          </a>
+            <Github className="w-5 h-5" aria-hidden="true" />
+            See This Site's Code
+          </Button>
         </div>
       </div>
     </section>

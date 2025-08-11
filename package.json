@@ -11,11 +11,11 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "node generateBuildInfo.js && node generateSitemap.js && next build",
+    "start": "serve out",
     "lint": "next lint",
-    "predeploy": "yarn run build",
-    "deploy": "gh-pages -d public -r git@github.com:eginatakasan/eginatakasan.github.io -t true"
+    "deploy": "gh-pages -d out -r git@github.com:eginatakasan/eginatakasan.github.io -t true",
+    "generate-sitemap": "node generateSitemap.js"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
