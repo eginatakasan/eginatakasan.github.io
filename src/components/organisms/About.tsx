@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from '../atoms/Button';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { technicalSkills } from '../../constants/technologies.constant';
 import projects from '../../constants/projects.constant';
 import workExperience from '../../constants/workExperience.constant';
 import education from '../../constants/education.constant';
 import Link from 'next/link';
+import Github from '../atoms/Icon/Github.icon';
 
 const About = () => {
   return (
@@ -99,7 +99,7 @@ const About = () => {
                     {project.liveUrl ||
                       (project.githubUrl && (
                         <>
-                          <ArrowTopRightOnSquareIcon className="w-5 h-5" />
+                          <Github className="w-5 h-5" />
                         </>
                       ))}
                   </a>
