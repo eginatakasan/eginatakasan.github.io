@@ -28,7 +28,12 @@ const projects: Project[] = [
       'Generates random map-like patterns using Perlin noise function',
     githubUrl: `${url.githubIoRepo}/tree/main/app/projects/random-islands-generator`,
     liveUrl: '/projects/random-islands-generator',
-    technologies: [tech['React'], tech['Typescript'], tech['Processing']],
+    technologies: [
+      tech['Next.js'],
+      tech['React'],
+      tech['Typescript'],
+      tech['Processing'],
+    ],
     title: 'Random Islands Generator',
   },
   {
