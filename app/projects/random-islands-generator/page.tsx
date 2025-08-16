@@ -1,9 +1,9 @@
-import RandomMapGeneratorClientPage from './clientPage';
+import RandomIslandsGeneratorClient from './clientPage';
 
 const Page = () => {
   return (
     <div className="w-full h-screen relative">
-      <RandomMapGeneratorClientPage />
+      <RandomIslandsGeneratorClient />
     </div>
   );
 };

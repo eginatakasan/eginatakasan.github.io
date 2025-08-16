@@ -13,6 +13,7 @@ const url = {
   linkedin: LINKEDIN_URL,
   mail: MAIL_URL,
   p5js: P5JS_URL,
+  randomIslandsGeneratorRepo: `${GITHUB_IO_REPO_URL}/tree/main/app/projects/random-islands-generator`,
   resume: RESUME_URL,
 };
 

@@ -33,7 +33,7 @@ const zoomToScale = (zoom: number) => {
   return ((100 - zoom) / 100) * (MAX_SCALE - MIN_SCALE) + MIN_SCALE;
 };
 
-const RandomMapGeneratorClientPage = () => {
+const RandomIslandsGenerator = () => {
   const canvasRef = useRef<HTMLDivElement>(null);
   const p5InstanceRef = useRef<any>(null);
   const [isClient, setIsClient] = useState(false);
@@ -248,7 +248,7 @@ const RandomMapGeneratorClientPage = () => {
               <br /> <br />
               Check out the{' '}
               <a
-                href={`${url.githubIoRepo}/tree/main/app/projects/random-map-generator`}
+                href={url.randomIslandsGeneratorRepo}
                 className="text-accent-dark inline-flex items-center gap-1 hover:underline"
               >
                 code <Github width={20} height={20} />
@@ -329,4 +329,4 @@ const RandomMapGeneratorClientPage = () => {
   );
 };
 
-export default RandomMapGeneratorClientPage;
+export default RandomIslandsGenerator;

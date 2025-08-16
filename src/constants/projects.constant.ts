@@ -25,6 +25,14 @@ const projects: Project[] = [
   },
   {
     description:
+      'Generates random map-like patterns using Perlin noise function',
+    githubUrl: `${url.githubIoRepo}/tree/main/app/projects/random-islands-generator`,
+    liveUrl: '/projects/random-islands-generator',
+    technologies: [tech['React'], tech['Typescript'], tech['Processing']],
+    title: 'Random Islands Generator',
+  },
+  {
+    description:
       "Mobile app that gives personalized beauty recommendations based on user's skin type and preferences",
     technologies: [tech['React Native'], tech['Typescript'], tech['Supabase']],
     title: 'AI Powered Beauty Assistant Mobile App',
