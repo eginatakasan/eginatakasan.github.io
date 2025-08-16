@@ -72,6 +72,11 @@ const technologies: Record<string, Technology> = {
     name: 'PostgreSQL',
     tags: [tags['Backend']],
   },
+  Processing: {
+    color: '#f1678e',
+    name: 'Processing',
+    tags: [tags['Frontend']],
+  },
   React: {
     color: '#58c4dc',
     name: 'React',

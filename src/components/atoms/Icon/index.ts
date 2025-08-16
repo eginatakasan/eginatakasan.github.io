@@ -1,10 +1,10 @@
-import Egg from './Egg.icon'
-import TripleChevronDown from './TripleChevronDown.icon'
-import Github from './Github.icon'
-import Internship from './Internship.icon'
-import LinkedIn from './LinkedIn.icon'
-import Organization from './Organization.icon'
-import Star from './Star.icon'
+import Egg from './Egg.icon';
+import TripleChevronDown from './TripleChevronDown.icon';
+import Github from './Github.icon';
+import Internship from './Internship.icon';
+import LinkedIn from './LinkedIn.icon';
+import Organization from './Organization.icon';
+import Star from './Star.icon';
 
 export default {
   Egg,
@@ -13,5 +13,5 @@ export default {
   Internship,
   LinkedIn,
   Organization,
-  Star
-}
+  Star,
+};

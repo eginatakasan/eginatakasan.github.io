@@ -1,8 +1,7 @@
 import clsx from 'clsx';
-import React from 'react';
-import Link from 'next/link';
+import React, { ButtonHTMLAttributes } from 'react';
 
-type ButtonProps = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
   className?: string;
   variant?: 'filled' | 'outlined' | 'text';
@@ -21,7 +20,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const baseClasses =
-    'flex flex-row font-raleway items-center gap-3 text-sm md:text-base font-semibold rounded-full transition-all duration-200';
+    'flex flex-row font-raleway items-center justify-center gap-3 text-sm md:text-base font-semibold rounded-full transition-all duration-200';
 
   const variantClasses = {
     filled:
@@ -33,13 +32,12 @@ const Button = ({
 
   if (href) {
     return (
-      <Link
+      <a
         href={href}
         className={clsx(baseClasses, variantClasses[variant], className)}
-        {...props}
       >
         {children}
-      </Link>
+      </a>
     );
   }
 

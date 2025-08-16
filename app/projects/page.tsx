@@ -6,6 +6,49 @@ import Button from '../../src/components/atoms/Button';
 import Icons from '../../src/components/atoms/Icon';
 import url from '../../src/constants/url.constant';
 import { getFormattedBuildDate } from '../../src/constants/buildInfo.constant';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Projects - Eginata Kasan',
+  description: 'Projects by Eginata Kasan',
+  keywords: [
+    'projects',
+    'software engineer',
+    'Eginata Kasan',
+    'software development',
+  ],
+  authors: [{ name: 'Eginata Kasan' }],
+  creator: 'Eginata Kasan',
+  publisher: 'Eginata Kasan',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: 'Projects - Eginata Kasan',
+    description: 'Projects by Eginata Kasan',
+    url: 'https://eginatakasan.github.io/projects',
+    siteName: 'Eginata Kasan',
+    locale: 'en_AU',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Projects - Eginata Kasan',
+    description: 'Projects by Eginata Kasan',
+    images: ['https://eginatakasan.github.io/profile2.jpg'],
+  },
+  alternates: {
+    canonical: 'https://eginatakasan.github.io/projects',
+  },
+};
 
 const ProjectsPage = () => {
   return (
@@ -18,9 +61,9 @@ const ProjectsPage = () => {
             My Projects
           </h1>
           <div className="block mt-4 p-1 max-w-[600px] text-justify font-medium text-textBlack font-raleway">
-            Here are some of the projects I've worked on as a software engineer.
-            I might have more that I haven't listed here since I'm always
-            working on something new! <br />
+            Hi, I'm Eginata Kasan! Here are some of the projects I've worked on
+            as a software engineer. I might have more that I haven't listed here
+            since I'm always working on something new! <br />
             <br />
             Feel free to contact me if you're interested in any of my projects.
           </div>
