@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: 'Eginata Kasan Portfolio',
     images: [
       {
-        url: 'https://eginatakasan.github.io/og-islands-generator.jpg',
+        url: 'https://eginatakasan.github.io/og-islands-generator.png',
         width: 1200,
         height: 630,
         alt: 'Random Islands Generator - Procedural Terrain Generation Tool',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Random Islands Generator - Procedural Terrain Generation',
     description:
       'Interactive procedural island generator using Perlin noise and p5.js. Create unique terrain maps with customizable pixel size and zoom levels.',
-    images: ['https://eginatakasan.github.io/og-islands-generator.jpg'],
+    images: ['https://eginatakasan.github.io/og-islands-generator.png'],
     creator: '@eginatakasan',
   },
   alternates: {
@@ -111,7 +111,7 @@ const Page = () => {
               'Real-time regeneration',
             ],
             screenshot:
-              'https://eginatakasan.github.io/og-islands-generator.jpg',
+              'https://eginatakasan.github.io/og-islands-generator.png',
             softwareHelp:
               'https://eginatakasan.github.io/projects/random-islands-generator',
             datePublished: '2024-01-01',
