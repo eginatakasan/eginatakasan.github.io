@@ -231,7 +231,7 @@ const RandomIslandsGenerator = () => {
           />
         </button>
 
-        <div className="w-full h-full flex flex-col p-5 pl-10">
+        <div className="w-full h-full flex flex-col p-5 pl-10 overflow-hidden">
           <div className="flex flex-col items-end mb-10">
             <p className="text-sm text-gray-500">Author: Eginata Kasan</p>
             <Link
