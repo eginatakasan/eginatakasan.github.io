@@ -2,7 +2,7 @@ import React from 'react';
 
 type Props = React.SVGProps<SVGSVGElement>;
 
-const Github = ({ width = 95, height = 'auto' }: Props) => (
+const EggIcon = ({ width = 95, height = 'auto' }: Props) => (
   <svg
     width={width}
     height={height}
@@ -22,4 +22,4 @@ const Github = ({ width = 95, height = 'auto' }: Props) => (
   </svg>
 );
 
-export default Github;
+export default EggIcon;

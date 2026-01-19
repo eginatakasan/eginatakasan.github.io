@@ -1,9 +1,10 @@
 import React from 'react';
 import url from '../../constants/url.constant';
-import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
+import { ArrowDownTrayIcon, EnvelopeIcon } from '@heroicons/react/24/solid';
 import { Button } from '../atoms';
 import AnimatedName from './AnimatedName';
 import Github from '../atoms/Icon/Github.icon';
+import Icon from '../atoms/Icon';
 
 const IntroductionView = () => {
   return (
@@ -26,9 +27,6 @@ const IntroductionView = () => {
           precise UI with detailed micro-interactions to improve user experience
           across products.
         </div>
-        <p className="text-sm mt-2 italic font-raleway text-textBlack">
-          I also go by "Eggy"
-        </p>
 
         <div className="flex flex-col gap-6 md:gap-4 mt-10 md:flex-row md:mt-16 w-full md:w-auto max-w-[600px]">
           <Button
@@ -54,6 +52,36 @@ const IntroductionView = () => {
             <Github className="w-5 h-5" aria-hidden="true" />
             See This Site's Code
           </Button>
+        </div>
+
+        <div className="flex flex-row space-x-2 mt-10">
+          <a
+            className="text-current w-6 h-6 p-2 box-content hover:text-accent hover:scale-110 transition-all"
+            href={url.mail}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Send email to Eginata Kasan"
+          >
+            <EnvelopeIcon aria-hidden="true" />
+          </a>
+          <a
+            className="text-current w-6 h-6 p-2 box-content hover:text-accent hover:scale-110 transition-all"
+            href={url.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Eginata Kasan's LinkedIn profile"
+          >
+            <Icon.LinkedIn className="w-6 h-6" aria-hidden="true" />
+          </a>
+          <a
+            className="text-current w-6 h-6 p-2 box-content hover:text-accent hover:scale-110 transition-all"
+            href={url.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Eginata Kasan's GitHub profile"
+          >
+            <Icon.Github className="w-6 h-6" aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>

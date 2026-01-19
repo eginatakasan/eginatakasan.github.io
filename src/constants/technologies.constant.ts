@@ -159,6 +159,12 @@ const technicalSkills = [
       .filter(tech => tech.tags.some(tag => tag?.name === 'Mobile development'))
       .map(tech => tech.name),
   },
+  {
+    category: 'Test Frameworks',
+    skills: Object.values(technologies)
+      .filter(tech => tech.tags.some(tag => tag?.name === 'Testing'))
+      .map(tech => tech.name),
+  }
 ];
 
 export default technologies;
