@@ -1,8 +1,15 @@
 const getYearDifference = (startDate: Date, endDate: Date) => {
-  const startYear = startDate.getFullYear();
-  const endYear = endDate.getFullYear();
-  const isMoreThanOneYear = endYear - startYear > 1;
-  return `>${endYear - startYear} year${isMoreThanOneYear ? 's' : ''}`;
+  let years = endDate.getFullYear() - startDate.getFullYear();
+  const monthDiff = endDate.getMonth() - startDate.getMonth();
+  const dayDiff = endDate.getDate() - startDate.getDate();
+  
+  // Adjust years if we haven't reached the anniversary month/day yet
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    years--;
+  }
+  
+  const isMoreThanOneYear = years > 1;
+  return `>${years} year${isMoreThanOneYear ? 's' : ''}`;
 };
 
 const workExperience = [
@@ -11,7 +18,7 @@ const workExperience = [
     period: `since May 2024 (${getYearDifference(
       new Date('2024-05-01'),
       new Date(),
-    )} years)`,
+    )})`,
     title: 'FullStack Engineer',
   },
   {

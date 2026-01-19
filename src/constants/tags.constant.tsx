@@ -3,6 +3,7 @@ import {
   ComputerDesktopIcon,
   DevicePhoneMobileIcon,
   GlobeAltIcon,
+  BeakerIcon,
 } from '@heroicons/react/24/solid';
 
 export type TechnologyTag = {
@@ -26,6 +27,10 @@ const tags: Record<string, TechnologyTag> = {
   Backend: {
     name: 'Backend development',
     icon: <ServerIcon className="w-4 h-4" />,
+  },
+  Testing: {
+    name: 'Testing',
+    icon: <BeakerIcon className="w-4 h-4" />,
   },
 };
 

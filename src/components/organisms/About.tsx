@@ -123,13 +123,13 @@ const About = () => {
                 </div>
               </article>
             ))}
-            <p className="text-sm font-light font-raleway italic">
+            {/* <p className="text-sm font-light font-raleway italic">
               (And more...)
-            </p>
+            </p> */}
           </div>
-          <Button href="/projects" variant="text">
+          {/* <Button href="/projects" variant="text">
             See More Details &gt;&gt;
-          </Button>
+          </Button> */}
         </section>
       </div>
 

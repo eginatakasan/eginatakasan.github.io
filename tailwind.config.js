@@ -131,6 +131,7 @@ module.exports = {
         textBlack: '#1E1E1E',
         textWhite: '#FFFFFF',
         frosted: '#d9d9d920',
+        white: '#fafafa'
       },
     },
   },
