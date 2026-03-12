@@ -1,41 +1,79 @@
 # Eginata Kasan's Personal Portfolio
 
-Hi, this is a repo for my portfolio (in-progress).
+Hi, I'm **Eginata Kasan** — a software engineer with a background in full-stack development and UX engineering. I'm currently a Full Stack Engineer at QSStudio in Sydney. Previously I worked as a UX Engineer at Nomura Research Institute Indonesia in Jakarta and started out as a Game Programmer intern at Agate Games Studio. This repository is my personal portfolio site: a place to share my experience, projects, and the technologies I work with.
 
-I'm building my website using Next.js with TypeScript, Tailwind CSS, and GSAP for animations.
+The site is built as a static Next.js app and is deployed to **GitHub Pages** at [eginatakasan.github.io](https://eginatakasan.github.io).
 
-## 🚀 Deployment
+---
 
-This project is configured for deployment to GitHub Pages. The site is automatically deployed when changes are pushed to the main branch.
+## What's in this project
 
-### Manual Deployment
+This is the source code for my portfolio website. It includes:
 
-If you need to deploy manually:
+- **About / intro** — who I am and what I do  
+- **Work experience** — roles at QSStudio, Nomura Research Institute Indonesia, and Agate  
+- **Technical skills** — web, mobile, and testing technologies I use  
+- **Projects** — selected work and side projects  
 
-1. **Build the project:**
+The app is exported as static HTML/CSS/JS and served on GitHub Pages (no server required).
+
+---
+
+## Tech stack (this site)
+
+| Area        | Technologies |
+|------------|--------------|
+| **Framework** | Next.js 15 (App Router) |
+| **Language**  | TypeScript |
+| **UI / styling** | React 19, Tailwind CSS, Emotion, styled-components |
+| **Animation** | GSAP (GreenSock) |
+| **Utilities** | date-fns, clsx |
+| **Hosting**   | GitHub Pages (static export) |
+
+Build and deploy use **Node.js**, **gh-pages**, and (optionally) **GitHub Actions**.
+
+---
+
+## Deployment
+
+The site is set up for deployment to GitHub Pages and can be updated manually or via CI.
+
+### Manual deployment
+
+1. **Build:**
    ```bash
    npm run build
+   ```
+   or with yarn:
+   ```bash
+   yarn build
    ```
 
 2. **Deploy to GitHub Pages:**
    ```bash
    npm run deploy
    ```
+   or:
+   ```bash
+   yarn deploy
+   ```
 
-### Automated Deployment
+### Automated deployment
 
-The project uses GitHub Actions for automated deployment. When you push changes to the main branch, the site will be automatically built and deployed to GitHub Pages.
+When GitHub Actions is configured, pushing to the main branch can trigger an automatic build and deploy to GitHub Pages.
 
-## 🛠️ Development
+---
+
+## Development
 
 ### Prerequisites
 
-- Node.js 18 or higher
-- npm or yarn
+- **Node.js** 18+
+- **npm** or **yarn**
 
-### Installation
+### Setup and run
 
-1. **Clone the repository:**
+1. **Clone the repo:**
    ```bash
    git clone https://github.com/eginatakasan/eginatakasan.github.io.git
    cd eginatakasan.github.io
@@ -45,49 +83,49 @@ The project uses GitHub Actions for automated deployment. When you push changes 
    ```bash
    npm install
    ```
+   or:
+   ```bash
+   yarn
+   ```
 
-3. **Run the development server:**
+3. **Start the dev server:**
    ```bash
    npm run dev
    ```
-
-4. **Open your browser and navigate to:**
+   or:
+   ```bash
+   yarn dev
    ```
-   http://localhost:3000
-   ```
 
-## 📁 Project Structure
+4. Open **http://localhost:3000** in your browser.
+
+---
+
+## Project structure
 
 ```
-├── app/                    # Next.js App Router pages
+├── app/                    # Next.js App Router (pages, layout)
 ├── src/
 │   ├── components/         # React components
-│   │   ├── atoms/         # Atomic components
-│   │   └── organisms/     # Complex components
-│   ├── assets/            # Static assets (images, fonts, etc.)
-│   ├── constants/         # Application constants
-│   └── utils/             # Utility functions
-├── public/                # Public static files
-└── .github/workflows/     # GitHub Actions workflows
+│   │   ├── atoms/          # Small reusable UI pieces
+│   │   └── organisms/      # Larger composed sections
+│   ├── assets/             # Images, fonts, etc.
+│   ├── constants/          # Data (e.g. work experience, technologies)
+│   └── utils/              # Helpers
+├── public/                 # Static files (favicon, etc.)
+└── .github/workflows/      # GitHub Actions (if used)
 ```
 
-## 🎨 Technologies Used
+---
 
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS** - Utility-first CSS framework
-- **GSAP** - Professional animation library
-- **Emotion** - CSS-in-JS library
-- **GitHub Pages** - Static site hosting
+## Configuration
 
-## 🔧 Configuration
+- **Static export** is enabled in `next.config.js` so the site can be hosted on GitHub Pages.
+- **Trailing slashes** are enabled for compatibility.
+- A **`.nojekyll`** file is used so GitHub Pages doesn’t run Jekyll on the output.
 
-The project is configured for static export to work with GitHub Pages:
+---
 
-- Static export enabled in `next.config.js`
-- Trailing slashes enabled for better compatibility
-- `.nojekyll` file included to disable Jekyll processing
+## License
 
-## 📝 License
-
-This project is private and personal.
+This project is personal and private, repository is made public for code viewing.
