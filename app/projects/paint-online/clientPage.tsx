@@ -15,6 +15,13 @@ const PaintOnline = () => {
   const brushColorRef = useRef('#000000');
   const isDrawingRef = useRef(false);
   const previousMouseRef = useRef<{ x: number; y: number } | null>(null);
+  const historyRef = useRef<Array<string>>([]); // Store canvas states as base64 images
+  const historyIndexRef = useRef(-1);
+  const maxHistorySize = 50;
+  const [canUndo, setCanUndo] = useState(false);
+  const [canRedo, setCanRedo] = useState(false);
+  const undoFunctionRef = useRef<(() => void) | null>(null);
+  const redoFunctionRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     setIsStatic(false);
@@ -81,7 +88,9 @@ const PaintOnline = () => {
         }
 
         // Queue-based flood fill
-        const queue: Array<[number, number]> = [[Math.floor(startX), Math.floor(startY)]];
+        const queue: Array<[number, number]> = [
+          [Math.floor(startX), Math.floor(startY)],
+        ];
         const visited = new Set<string>();
 
         while (queue.length > 0) {
@@ -124,12 +133,83 @@ const PaintOnline = () => {
         p.updatePixels();
       };
 
+      // Function to save current canvas state to history
+      const saveState = () => {
+        const canvasImage = p.get();
+        const imageData = canvasImage.canvas.toDataURL('image/png');
+
+        // Remove any states after current index (when user draws after undo)
+        if (historyIndexRef.current < historyRef.current.length - 1) {
+          historyRef.current = historyRef.current.slice(
+            0,
+            historyIndexRef.current + 1,
+          );
+        }
+
+        // Add new state
+        historyRef.current.push(imageData);
+
+        // Limit history size
+        if (historyRef.current.length > maxHistorySize) {
+          historyRef.current.shift();
+          // Don't change historyIndexRef when we shift, as we're removing the oldest state
+        }
+
+        historyIndexRef.current = historyRef.current.length - 1;
+
+        // Update button states
+        setCanUndo(historyIndexRef.current > 0);
+        setCanRedo(false);
+      };
+
+      // Function to restore canvas from history
+      const restoreState = (index: number) => {
+        if (index < 0 || index >= historyRef.current.length) return;
+
+        const imageData = historyRef.current[index];
+        const img = p.loadImage(imageData, () => {
+          p.image(img, 0, 0);
+        });
+
+        historyIndexRef.current = index;
+        setCanUndo(index > 0);
+        setCanRedo(index < historyRef.current.length - 1);
+      };
+
+      // Expose functions to parent component
+      p.saveState = saveState;
+      p.restoreState = restoreState;
+
+      const undoFn = () => {
+        if (historyIndexRef.current > 0) {
+          restoreState(historyIndexRef.current - 1);
+        }
+      };
+
+      const redoFn = () => {
+        if (historyIndexRef.current < historyRef.current.length - 1) {
+          restoreState(historyIndexRef.current + 1);
+        }
+      };
+
+      p.undo = undoFn;
+      p.redo = redoFn;
+
+      // Store functions in refs for direct access
+      undoFunctionRef.current = undoFn;
+      redoFunctionRef.current = redoFn;
+
       p.setup = () => {
         const canvas = p.createCanvas(window.innerWidth, window.innerHeight);
         canvas.parent(canvasRef.current!);
         p.background(255);
         p.strokeCap(p.ROUND);
         p.strokeJoin(p.ROUND);
+
+        // Save initial state
+        setTimeout(() => {
+          saveState();
+        }, 100);
       };
 
       p.draw = () => {
@@ -138,6 +218,8 @@ const PaintOnline = () => {
 
       p.mousePressed = () => {
         if (toolModeRef.current === 'fill') {
+          // Save state before fill
+          saveState();
           // Use fill tool
           const fillColor = p.color(brushColorRef.current);
           floodFill(p.mouseX, p.mouseY, fillColor);
@@ -171,12 +253,18 @@ const PaintOnline = () => {
       };
 
       p.mouseReleased = () => {
+        if (isDrawingRef.current) {
+          // Save state after drawing is complete
+          saveState();
+        }
         isDrawingRef.current = false;
         previousMouseRef.current = null;
       };
 
       p.touchStarted = () => {
         if (toolModeRef.current === 'fill') {
+          // Save state before fill
+          saveState();
           // Use fill tool
           const fillColor = p.color(brushColorRef.current);
           floodFill(p.mouseX, p.mouseY, fillColor);
@@ -211,6 +299,10 @@ const PaintOnline = () => {
       };
 
       p.touchEnded = () => {
+        if (isDrawingRef.current) {
+          // Save state after drawing is complete
+          saveState();
+        }
         isDrawingRef.current = false;
         previousMouseRef.current = null;
         return false;
@@ -229,6 +321,9 @@ const PaintOnline = () => {
         p5InstanceRef.current.remove();
         p5InstanceRef.current = null;
       }
+      // Clear function refs
+      undoFunctionRef.current = null;
+      redoFunctionRef.current = null;
     };
   }, [p5Loaded]);
 
@@ -245,9 +340,54 @@ const PaintOnline = () => {
     brushColorRef.current = brushColor;
   }, [brushColor]);
 
+  const handleUndo = useCallback(() => {
+    console.log('handleUndo');
+    if (undoFunctionRef.current) {
+      console.log('actual undo');
+      undoFunctionRef.current();
+    }
+  }, []);
+
+  const handleRedo = useCallback(() => {
+    if (redoFunctionRef.current) {
+      redoFunctionRef.current();
+    }
+  }, []);
+
+  // Keyboard shortcuts for undo/redo
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+        e.preventDefault();
+        handleUndo();
+      } else if (
+        (e.ctrlKey || e.metaKey) &&
+        (e.key === 'y' || (e.key === 'z' && e.shiftKey))
+      ) {
+        e.preventDefault();
+        handleRedo();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleUndo, handleRedo]);
+
   const handleClear = useCallback(() => {
     if (p5InstanceRef.current) {
+      // Save state before clearing
+      if (p5InstanceRef.current.saveState) {
+        p5InstanceRef.current.saveState();
+      }
       p5InstanceRef.current.background(255);
+      // Save cleared state
+      setTimeout(() => {
+        if (p5InstanceRef.current && p5InstanceRef.current.saveState) {
+          p5InstanceRef.current.saveState();
+        }
+      }, 10);
     }
   }, []);
 
@@ -267,24 +407,55 @@ const PaintOnline = () => {
       <div
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
-        style={{ cursor: 'crosshair' }}
+        style={{ cursor: toolMode === 'fill' ? 'crosshair' : 'crosshair' }}
       />
 
       {/* Controls overlay */}
-      <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4 flex flex-col gap-4 min-w-[200px]">
+      <div className="fixed top-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4 flex flex-col gap-4 min-w-[200px] z-20">
+        {/* Tool Selection */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Brush Size: {brushSize}px
+            Tool
           </label>
-          <input
-            type="range"
-            min="1"
-            max="50"
-            value={brushSize}
-            onChange={e => setBrushSize(parseInt(e.target.value))}
-            className="w-full"
-          />
+          <div className="flex gap-2">
+            <button
+              onClick={() => setToolMode('brush')}
+              className={`flex-1 px-4 py-2 rounded text-sm font-medium transition-colors ${
+                toolMode === 'brush'
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+              }`}
+            >
+              Brush
+            </button>
+            <button
+              onClick={() => setToolMode('fill')}
+              className={`flex-1 px-4 py-2 rounded text-sm font-medium transition-colors ${
+                toolMode === 'fill'
+                  ? 'bg-blue-500 text-white'
+                  : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+              }`}
+            >
+              Fill
+            </button>
+          </div>
         </div>
+
+        {toolMode === 'brush' && (
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Brush Size: {brushSize}px
+            </label>
+            <input
+              type="range"
+              min="1"
+              max="50"
+              value={brushSize}
+              onChange={e => setBrushSize(parseInt(e.target.value))}
+              className="w-full"
+            />
+          </div>
+        )}
 
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -298,18 +469,30 @@ const PaintOnline = () => {
           />
         </div>
 
-        <div className="flex gap-2">
-          <button
-            onClick={handleClear}
-            className="flex-1 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm font-medium transition-colors"
-          >
-            Clear
-          </button>
+        <div className="flex flex-col gap-2">
           <button
             onClick={handleSave}
-            className="flex-1 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded text-sm font-medium transition-colors"
+            className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded text-sm font-medium transition-colors flex items-center justify-center gap-2"
           >
-            Save
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Save Image
+          </button>
+          <button
+            onClick={handleClear}
+            className="w-full px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm font-medium transition-colors"
+          >
+            Clear Canvas
           </button>
         </div>
       </div>

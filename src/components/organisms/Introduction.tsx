@@ -16,13 +16,10 @@ const IntroductionView = () => {
         <h2 className="text-xl font-tokyo text-accent">Software Engineer</h2>
         <AnimatedName />
         <div className="block mt-4 p-1 max-w-[600px] text-justify font-medium text-textBlack font-raleway">
-          A Software Engineer currently pursuing Master's Degree in Information
-          Technology at University of Technology Sydney (Expected Graduation in
-          December 2025).
+          A Software Engineer with 4 years of experience in Web & Mobile App development.
           <br />
           <br />
-          Adept in Web & Mobile App development. I'm always working varying
-          projects as a part-time Full-stack developer at QSStudio, Sydney. My
+          I'm always working varying projects as a part-time Full-stack developer at QSStudio, Sydney. My
           past experience as a UX Engineer means I specialize in building
           precise UI with detailed micro-interactions to improve user experience
           across products.
@@ -54,7 +51,7 @@ const IntroductionView = () => {
           </Button>
         </div>
 
-        <div className="flex flex-row space-x-2 mt-10">
+        <div className="flex flex-row w-full sm:w-auto justify-center space-x-2 mt-20 sm:mt-10">
           <a
             className="text-current w-6 h-6 p-2 box-content hover:text-accent hover:scale-110 transition-all"
             href={url.mail}

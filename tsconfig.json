@@ -29,6 +29,7 @@
     ]
   },
   "include": [
+    "next-env.d.ts",
     "app",
     "src",
     "types",

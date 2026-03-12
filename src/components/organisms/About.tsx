@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../atoms/Button';
+// import Button from '../atoms/Button';
 import { technicalSkills } from '../../constants/technologies.constant';
 import projects from '../../constants/projects.constant';
 import workExperience from '../../constants/workExperience.constant';
