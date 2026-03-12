@@ -90,16 +90,6 @@ module.exports = {
           'to': { borderClor: 'transparent' },
         }
       },
-      animation: {
-        eyesGlance: 'eyesGlance 4s ease-in-out infinite alternate',
-        mouseDrag: 'mouseDrag 4s ease-in-out infinite alternate',
-        screenColorChange: 'screenColorChange 2s linear infinite alternate',
-        waves: 'wave 30s ease-in-out infinite alternate',
-        gentleWave: 'gentleWave 20s ease-in-out infinite alternate',
-        slideInRight: 'slideInRight 800ms ease-out ',
-        typing: 'widen 2s steps(15, end), blinkCaret 800ms step-end infinite',
-        blink: 'blink 4s linear infinite',
-      },
       fontFamily: {
         nunitoSans: 'Nunito-Sans',
         tokyo: 'Tokyo',
@@ -110,13 +100,13 @@ module.exports = {
       colors: {
         primary: {
           light: '#ffd6ff',
-          DEFAULT: '#e7c6ff',
-          dark: '#a48de9',
+          DEFAULT: '#FFD29D',
+          dark: '#FFB563',
         },
         accent: {
-          light: '#FFE193',
-          DEFAULT: '#ECC35A',
-          dark: '#c79b2c',
+          light: '#b8ac8f',
+          DEFAULT: '#70a288',
+          dark: '#918450',
         },
         secondary: {
           light: '#a2d2ff',

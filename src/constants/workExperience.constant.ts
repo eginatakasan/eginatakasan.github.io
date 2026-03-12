@@ -1,15 +1,13 @@
+import { differenceInCalendarMonths } from 'date-fns';
+
 const getYearDifference = (startDate: Date, endDate: Date) => {
-  let years = endDate.getFullYear() - startDate.getFullYear();
-  const monthDiff = endDate.getMonth() - startDate.getMonth();
-  const dayDiff = endDate.getDate() - startDate.getDate();
-  
-  // Adjust years if we haven't reached the anniversary month/day yet
-  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
-    years--;
-  }
-  
-  const isMoreThanOneYear = years > 1;
-  return `>${years} year${isMoreThanOneYear ? 's' : ''}`;
+  const monthDiff = differenceInCalendarMonths(endDate, startDate);
+  const months = monthDiff % 12;
+  let years = Math.floor(monthDiff / 12);
+
+  const isMoreThanOneMonth = months > 1;
+  const isMoreThanOneYear = monthDiff > 12;
+  return `${years} year${isMoreThanOneYear ? 's' : ''} ${months > 0 ? `${months > 0 ? `${months}` : ''} ${isMoreThanOneMonth ? 'months' : 'month'}` : ''}`;
 };
 
 const workExperience = [

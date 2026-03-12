@@ -8,13 +8,13 @@ const BottomContacts = () => {
   return (
     <footer className="flex flex-col py-6 w-full xl:max-w-[1280px] mx-auto">
       <div className="flex-1 border-t border-t-black border-solid" />
-      <div className="flex flex-row justify-between items-center">
+      <div className="flex flex-col-reverse gap-20 sm:flex-row justify-between items-center">
         <div className="flex flex-row space-x-4">
           <p className="text-sm mt-2 italic font-raleway text-textBlack">
             Last updated: {getFormattedBuildDate()}
           </p>
         </div>
-        <div className="flex flex-row space-x-4">
+        <div className="flex flex-row space-x-2 sm:space-x-4">
           <a
             className="text-current w-8 h-8 p-4 box-content hover:text-accent hover:scale-110 transition-all"
             href={url.mail}

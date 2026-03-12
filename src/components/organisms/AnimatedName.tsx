@@ -8,11 +8,13 @@ const AnimatedName = () => {
   const textRef = useRef<HTMLHeadingElement>(null);
   const name = 'Eginata Kasan';
   const [isStatic, setIsStatic] = useState(true);
+  const [isNarrow, setIsNarrow] = useState(false);
   const { width } = useWindowSize();
 
   useEffect(() => {
     setIsStatic(false);
-  }, []);
+    setIsNarrow(width ? width <= 560 : false);
+  }, [width]);
 
   const animateChars = (chars: NodeListOf<Element>) => {
     gsap.fromTo(
@@ -89,7 +91,7 @@ const AnimatedName = () => {
       className="text-7xl sm:text-[5rem] mt-2 font-cardo font-bold text-textBlack pr-1 border-solid hover:cursor-pointer"
     >
       {isStatic ? (
-        <span className="char inline-block">Eginata Kasan</span>
+        <span className="char inline-block">Eginata{isNarrow ? '\n' : ' '}Kasan</span>
       ) : (
         animatedName
       )}
